@@ -14,7 +14,7 @@
 
 <title>Geografía de pagos</title>
 
-<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -23,18 +23,6 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<script src="site_libs/htmlwidgets-1.3/htmlwidgets.js"></script>
-<script src="site_libs/plotly-binding-4.9.0/plotly.js"></script>
-<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="site_libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="site_libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
-<link href="site_libs/plotly-htmlwidgets-css-1.46.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="site_libs/plotly-main-1.46.1/plotly-latest.min.js"></script>
-<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="site_libs/datatables-binding-0.4/datatables.js"></script>
-<link href="site_libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="site_libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="site_libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -292,6 +280,9 @@ $(document).ready(function () {
   <a href="index.html">Inicio</a>
 </li>
 <li>
+  <a href="timeframe.html">Períodos</a>
+</li>
+<li>
   <a href="metodo.html">Método de pago</a>
 </li>
 <li>
@@ -334,29 +325,9 @@ $(document).ready(function () {
 
 
 <ol style="list-style-type: decimal">
-<li>Gráfico de barras que contiene en el eje X cada mes y cada barra está coloreada por la categoría de método de pagos (son 4).</li>
-<li>Tabla del detalle por mes.</li>
+<li>Contenido de inicio asociado con el proyecto.</li>
 </ol>
 <p></br></p>
-<div id="grafico-de-barras" class="section level2">
-<h2>Gráfico de barras</h2>
-<div id="htmlwidget-cd0e7f766ad7675e7889" style="width:100%;height:480px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cd0e7f766ad7675e7889">{"x":{"visdat":{"6b3b19c46e8d":["function () ","plotlyVisDat"]},"cur_data":"6b3b19c46e8d","attrs":{"6b3b19c46e8d":{"x":{},"y":{},"name":"","color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"title":"Ventas"},"xaxis":{"domain":[0,1],"automargin":true,"title":"","type":"category","categoryorder":"array","categoryarray":["2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01"]},"barmode":"stack","hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"x":["2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01"],"y":[267034311,213451123,228566487,207766770,187296898,206897887,198347838,156168410,108616116,107852717,70881065,45559029,93239115,75117596,86128698,50499968,54610301,89367180,60165059],"name":"","type":"bar","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01"],"y":[3475642153,2966505660,3854926965,4385526079,4224610052,4229180859,4367171934,4708172909,4573707091,4018646974,9889988472,7684071396,5126881670,4490690326,5970019958,6074567245,6873244882,8103123745,7300169864],"name":"","type":"bar","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01"],"y":[4480605760,3108683617,4068412296,4508200614,4316663408,4368277099,5509249569,5170707642,5845540777,5976722588,13032998038,9224394401,6882558090,6131202590,7876307486,8601094036,9181639600,11426414565,14438837079],"name":"","type":"bar","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2018-01-01","2018-03-01","2018-04-01"],"y":[3472262,58900,59000],"name":"","type":"bar","marker":{"color":"transparent","line":{"color":"transparent"}},"textfont":{"color":"transparent"},"error_y":{"color":"transparent"},"error_x":{"color":"transparent"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01"],"y":[19819497100,16436312336,20561281903,24795574266,24538308622,22674742233,27287889523,24914687270,27676626262,27908238689,58756362999,32833190218,29326299996,27126544242,33680177643,33572493596,38474138687,40820339551,41821651229],"name":"","type":"bar","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"textfont":{"color":"rgba(231,138,195,1)"},"error_y":{"color":"rgba(231,138,195,1)"},"error_x":{"color":"rgba(231,138,195,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="tabla-mensual" class="section level2">
-<h2>Tabla mensual</h2>
-<div id="section" class="section level3">
-<h3>2018</h3>
-<div id="htmlwidget-9df63d21be81aaa00e8e" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9df63d21be81aaa00e8e">{"x":{"filter":"none","data":[["2018-Jan","2018-Feb","2018-Mar","2018-Apr","2018-May","2018-Jun","2018-Jul","2018-Aug","2018-Sep","2018-Oct","2018-Nov","2018-Dec"],[736114,639840,745592,908022,884590,854865,943818,903983,1010062,1008936,2036437,1256825],[28046251586,22724952736,28713246551,33897126729,33266878980,31479098078,37362658864,34949736231,38204490246,38011460968,81750230574,49787215044],[38100.4186661305,35516.6178044511,38510.6687719289,37330.7328776175,37607.1162685538,36823.4728033081,39586.719965078,38661.9396946624,37823.9061027937,37674.7989644536,40143.7562635132,39613.4824211804],["VISA (37.9%), MASTERCARD (25.6%), PSE (12.3%)","VISA (40.3%), MASTERCARD (24.6%), PSE (13%)","VISA (40%), MASTERCARD (24.6%), PSE (13.4%)","VISA (40.6%), MASTERCARD (25.7%), PSE (12.9%)","VISA (39.9%), MASTERCARD (26.7%), PSE (12.7%)","VISA (39.3%), MASTERCARD (25.8%), PSE (13.3%)","VISA (38.7%), MASTERCARD (27.6%), PSE (11.6%)","VISA (38.5%), MASTERCARD (25.5%), PSE (13.3%)","VISA (39.5%), MASTERCARD (26.1%), PSE (11.8%)","VISA (40.3%), MASTERCARD (27.1%), EFECTY (10.5%)","VISA (39.6%), MASTERCARD (25.9%), PSE (11.9%)","VISA (36.7%), MASTERCARD (24%), PSE (15.1%)"],["Bogota D.c. (30.9%), Antioquia (17.3%), Valle Del Cauca (8.1%)","Bogota D.c. (34.1%), Antioquia (16.7%), Valle Del Cauca (8.4%)","Bogota D.c. (31.2%), Antioquia (15.5%), Valle Del Cauca (8.4%)","Bogota D.c. (32.5%), Antioquia (17.7%), Valle Del Cauca (7.6%)","Bogota D.c. (32.9%), Antioquia (16.7%), Valle Del Cauca (7.8%)","Bogota D.c. (31.8%), Antioquia (16.7%), Valle Del Cauca (7.8%)","Bogota D.c. (32.1%), Antioquia (18.4%), Valle Del Cauca (8.1%)","Bogota D.c. (33.1%), Antioquia (16.9%), Valle Del Cauca (8%)","Bogota D.c. (30.4%), Antioquia (18.2%), Valle Del Cauca (8.1%)","Bogota D.c. (32.7%), Antioquia (17%), Valle Del Cauca (8.3%)","Bogota D.c. (30.1%), Antioquia (18.8%), Valle Del Cauca (8%)","Bogota D.c. (29.8%), Antioquia (17.4%), Valle Del Cauca (9%)"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>month<\/th>\n      <th>TPT<\/th>\n      <th>Sum TPV<\/th>\n      <th>Avg TPV<\/th>\n      <th>Top 3 medio de pago<\/th>\n      <th>Top 3 departamento<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"tr","scrollX":true,"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data) {\nDTWidget.formatCurrency(this, row, data, 1, '', 0, 3, ',', '.', true);\nDTWidget.formatCurrency(this, row, data, 2, '$', 0, 3, ',', '.', true);\nDTWidget.formatCurrency(this, row, data, 3, '$', 0, 3, ',', '.', true);\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
-</div>
-<div id="section-1" class="section level3">
-<h3>2019</h3>
-<div id="htmlwidget-f3c205f525ac1f0dc8be" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f3c205f525ac1f0dc8be">{"x":{"filter":"none","data":[["2019-Jan","2019-Feb","2019-Mar","2019-Apr","2019-May","2019-Jun","2019-Jul"],[1155293,1029254,1286287,1284251,1478659,1538086,1567837],[41428978871,37823554754,47612633785,48298654845,54583633470,60439245041,63620823231],[35860.1487856327,36748.5137332476,37015.5601238293,37608.4229990866,36914.2807570914,39295.1012108556,40578.7229354837],["VISA (39.1%), MASTERCARD (25.6%), EFECTY (12.1%)","VISA (39.2%), MASTERCARD (26.6%), EFECTY (12%)","VISA (38.9%), MASTERCARD (26.1%), EFECTY (12.8%)","VISA (38.7%), MASTERCARD (25.4%), EFECTY (14.2%)","VISA (40.3%), MASTERCARD (24.9%), EFECTY (13.5%)","VISA (37.2%), MASTERCARD (24.9%), EFECTY (15.3%)","VISA (36.4%), MASTERCARD (24.6%), EFECTY (19.1%)"],["Bogota D.c. (31.8%), Antioquia (16.7%), Valle Del Cauca (8.5%)","Bogota D.c. (33.7%), Antioquia (17%), Valle Del Cauca (7.7%)","Bogota D.c. (32.8%), Antioquia (17.4%), Valle Del Cauca (7.9%)","Bogota D.c. (31%), Antioquia (17.9%), Valle Del Cauca (7.7%)","Bogota D.c. (31.6%), Antioquia (17.6%), Valle Del Cauca (7.8%)","Bogota D.c. (29%), Antioquia (18.6%), Valle Del Cauca (7.6%)","Bogota D.c. (28.6%), Antioquia (17%), Valle Del Cauca (7.7%)"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>month<\/th>\n      <th>TPT<\/th>\n      <th>Sum TPV<\/th>\n      <th>Avg TPV<\/th>\n      <th>Top 3 medio de pago<\/th>\n      <th>Top 3 departamento<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"tr","scrollX":true,"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data) {\nDTWidget.formatCurrency(this, row, data, 1, '', 0, 3, ',', '.', true);\nDTWidget.formatCurrency(this, row, data, 2, '$', 0, 3, ',', '.', true);\nDTWidget.formatCurrency(this, row, data, 3, '$', 0, 3, ',', '.', true);\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
-<p></br></p>
-</div>
-</div>
 
 <p>Copyright &copy; 2019 PayU & Fidelio, todos los derechos reservados.</p>
 
