@@ -12,7 +12,7 @@
 
 
 
-<title>Colombia: payment geography</title>
+<title>Departamento</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -318,43 +318,60 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Colombia: payment geography</h1>
+<h1 class="title toc-ignore">Departamento</h1>
 
 </div>
 
 
 <ol style="list-style-type: decimal">
-<li>Colombia in Latin America (MX 2 AR)</li>
+<li>Gráfico de barras ordenando de mayor a menos en ticket promedio para todos los departamentos.</li>
+<li>Mapa coloreado por indicador creado para visualizar departamentos con mayor importancia y con bajo monto de transacciones.</li>
+<li>Mapa coloreado por el método de pago más utilizado.</li>
 </ol>
-<ul>
-<li>Country’s context (economic growth, peace agreement)</li>
-<li>Relative poblational size</li>
-<li>Spacial (areas)</li>
-<li>Economic volume / transactional</li>
-</ul>
-<ol start="2" style="list-style-type: decimal">
-<li>Colombia as a country</li>
-</ol>
-<ul>
-<li>Market’s evolution (Bancarization)</li>
-<li>Infraestructure (Internet, smartphones, socioeconomical levels, zones, ages)</li>
-</ul>
-<ol start="3" style="list-style-type: decimal">
-<li>Métodos de Pago en Colombia</li>
-</ol>
-<ul>
-<li>Categorías de pago (Efectivo, Débito y Crédito).</li>
-<li>Métodos de pago específicos.</li>
-</ul>
-<ol start="4" style="list-style-type: decimal">
-<li>Regiones de Colombia</li>
-<li>Industrias en Colombia</li>
-<li>Guía de mercado</li>
-</ol>
-<ul>
-<li>Recomendaciones por industria, sectores y operación.</li>
-</ul>
+<pre class="r"><code># # Filtro para esta sección
+# logic &lt;- !is.na(d$id_mpio) &amp;
+#   (d$month &lt; &quot;2019-07-01&quot; &amp; d$month &gt;= &quot;2019-01-01&quot;)
+
+print(&quot;Hola mundo&quot;)</code></pre>
+<pre><code>## [1] &quot;Hola mundo&quot;</code></pre>
 <p></br></p>
+<div id="mapa-por-departamento" class="section level2 tabset">
+<h2>Mapa por departamento</h2>
+<div id="ticket-promedio" class="section level3">
+<h3>Ticket promedio</h3>
+<pre class="r"><code># # Ticket promedio por departamento
+# ticket &lt;- d[logic, .(
+#   TPT = sum(tpt, na.rm = T)
+#   , `Sum TPV` = sum(tpv, na.rm = T)
+#   , `Avg TPV` = sum(tpv, na.rm = T)/sum(tpt, na.rm = T)
+#   ), keyby = .(DPTO = id_depto, Departamento)]
+# dptos &lt;- merge(x = dptos, y = ticket, by = &quot;DPTO&quot;)
+# plot_shape(dptos, label = &quot;NOMBRE_DPT&quot;, color = &quot;Avg TPV&quot;)
+# # plot_shape(dptos, label = &quot;NOMBRE_DPT&quot;, color = &quot;TPV_sum&quot;)
+
+print(&quot;Hola mundo&quot;)</code></pre>
+<pre><code>## [1] &quot;Hola mundo&quot;</code></pre>
+</div>
+<div id="year-2-date-increment" class="section level3">
+<h3>Year 2 Date (% increment)</h3>
+<pre class="r"><code># # Year2Date by Departament
+# logic &lt;- !is.na(d$id_mpio) &amp;
+#   (d$month &lt; &quot;2019-07-01&quot; &amp; d$month &gt;= &quot;2019-01-01&quot;) |
+#   (d$month &lt; &quot;2018-07-01&quot; &amp; d$month &gt;= &quot;2018-01-01&quot;)
+# tmp &lt;- d[logic &amp; !is.na(id_depto), .(
+#   TPV_avg = sum(tpv, na.rm = T)/sum(tpt, na.rm = T)
+# ), keyby = .(DPTO = id_depto, year(month))]
+# tmp &lt;- dcast.data.table(data = tmp, formula = &quot;DPTO ~ year&quot;, fun.aggregate = function(x){x[1]}, value.var = &quot;TPV_avg&quot;)
+# tmp[, delta := (`2019` - `2018`)/`2018`]
+# tmp[`2018` == 0 | `2019` == 0, delta := NA]
+# dptos &lt;- merge(x = dptos, y = tmp[, .(DPTO, delta)], by = &quot;DPTO&quot;)
+# plot_shape(dptos, label = &quot;NOMBRE_DPT&quot;, color = &quot;delta&quot;)
+
+print(&quot;Hola mundo&quot;)</code></pre>
+<pre><code>## [1] &quot;Hola mundo&quot;</code></pre>
+<p></br></p>
+</div>
+</div>
 
 <p>Copyright &copy; 2019 PayU & Fidelio, todos los derechos reservados.</p>
 

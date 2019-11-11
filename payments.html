@@ -12,7 +12,7 @@
 
 
 
-<title>Colombia: payment geography</title>
+<title>Payment Methods</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -318,43 +318,103 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Colombia: payment geography</h1>
+<h1 class="title toc-ignore">Payment Methods</h1>
 
 </div>
 
 
+<pre class="r"><code># # Filtro para esta sección
+# logic &lt;- !is.na(d$id_mpio) &amp;
+#   (d$month &lt; &quot;2019-07-01&quot; &amp; d$month &gt;= &quot;2019-01-01&quot;)
+
+print(&quot;Hola mundo&quot;)</code></pre>
+<pre><code>## [1] &quot;Hola mundo&quot;</code></pre>
+<p>Todos los datos están filtrado por el primer semestre de 2019.</p>
 <ol style="list-style-type: decimal">
-<li>Colombia in Latin America (MX 2 AR)</li>
+<li>Gráfico de barras con Year 2 Date.</li>
+<li>Mapa de departamentos con método de pago más utilizado.</li>
+<li>Tabla con detalles y departamentos con que más utilizando cada método de pago.</li>
 </ol>
-<ul>
-<li>Country’s context (economic growth, peace agreement)</li>
-<li>Relative poblational size</li>
-<li>Spacial (areas)</li>
-<li>Economic volume / transactional</li>
-</ul>
-<ol start="2" style="list-style-type: decimal">
-<li>Colombia as a country</li>
-</ol>
-<ul>
-<li>Market’s evolution (Bancarization)</li>
-<li>Infraestructure (Internet, smartphones, socioeconomical levels, zones, ages)</li>
-</ul>
-<ol start="3" style="list-style-type: decimal">
-<li>Métodos de Pago en Colombia</li>
-</ol>
-<ul>
-<li>Categorías de pago (Efectivo, Débito y Crédito).</li>
-<li>Métodos de pago específicos.</li>
-</ul>
-<ol start="4" style="list-style-type: decimal">
-<li>Regiones de Colombia</li>
-<li>Industrias en Colombia</li>
-<li>Guía de mercado</li>
-</ol>
-<ul>
-<li>Recomendaciones por industria, sectores y operación.</li>
-</ul>
+<p>La categoría “Tarjetas de crédito” la componen “VISA”, “MASTERCARD”, “DINERS”, “AMEX”, “CMR” y “CODENSA”. La categoría “Débito a cuenta” la componen “PSE”, “VISA_DEBIT” y “ACH_DEBIT” La categoría “Efectivo” la componen “EFECTY”, “BALOTO”, “OTHERS_CASH”, “BANK_TRANSFER” La categoría “Referencia bancaria” la componen “BANK_REFERENCED” La categoría “Alternativo” la componen “LENDING”, “CASH_ON_DELIVERY”, “ELO”</p>
 <p></br></p>
+<div id="year-2-data-by-payment-methods-2019" class="section level2">
+<h2>Year 2 Data by Payment Methods (2019)</h2>
+<pre class="r"><code># # Year 2 Date by Payment Method
+# logic &lt;- !is.na(d$medio_pago_principal) &amp; ((d$month &lt; &quot;2019-07-01&quot; &amp; d$month &gt;= &quot;2019-01-01&quot;) |
+#   (d$month &lt; &quot;2018-07-01&quot; &amp; d$month &gt;= &quot;2018-01-01&quot;))
+# data &lt;- d[logic &amp; !is.na(medio_pago_principal), .(
+#   TPT = sum(tpt, na.rm = T)
+#   , TPV_sum = sum(tpv, na.rm = T)
+#   , TPV_avg = sum(tpv, na.rm = T)/sum(tpt, na.rm = T)
+# ), keyby = .(month, medio_pago_principal)]
+# 
+# p2019 &lt;- plot_ly(data = data[year(month) %in% &quot;2019&quot;], labels = ~medio_pago_principal, values = ~TPV_sum,
+#           name = &quot;2019&quot;, type = &quot;pie&quot;)
+# p2019
+
+print(&quot;Hola mundo&quot;)</code></pre>
+<pre><code>## [1] &quot;Hola mundo&quot;</code></pre>
+<p></br></p>
+</div>
+<div id="year-2-data-by-payment-methods-2018" class="section level2">
+<h2>Year 2 Data by Payment Methods (2018)</h2>
+<pre class="r"><code># p2018 &lt;- plot_ly(data = data[year(month) %in% &quot;2018&quot;], labels = ~medio_pago_principal, values = ~TPV_sum,
+#           name = &quot;2018&quot;, type = &quot;pie&quot;)
+# p2018
+
+print(&quot;Hola mundo&quot;)</code></pre>
+<pre><code>## [1] &quot;Hola mundo&quot;</code></pre>
+<p></br></p>
+</div>
+<div id="year-2-data-by-payment-category-2019" class="section level2">
+<h2>Year 2 Data by Payment Category (2019)</h2>
+<pre class="r"><code># # Year 2 Date by Payment Category
+# data &lt;- d[logic &amp; !is.na(categoria_pago), .(
+#   TPT = sum(tpt, na.rm = T)
+#   , TPV_sum = sum(tpv, na.rm = T)
+#   , TPV_avg = sum(tpv, na.rm = T)/sum(tpt, na.rm = T)
+# ), keyby = .(month, categoria_pago)]
+# 
+# p2019 &lt;- plot_ly(data = data[year(month) %in% &quot;2019&quot;], labels = ~categoria_pago, values = ~TPV_sum, name = &quot;2019&quot;, type = &quot;pie&quot;)
+# p2019
+
+print(&quot;Hola mundo&quot;)</code></pre>
+<pre><code>## [1] &quot;Hola mundo&quot;</code></pre>
+<p></br></p>
+</div>
+<div id="year-2-data-by-payment-category-2018" class="section level2">
+<h2>Year 2 Data by Payment Category (2018)</h2>
+<pre class="r"><code># p2018 &lt;- plot_ly(data = data[year(month) %in% &quot;2018&quot;], labels = ~categoria_pago, values = ~TPV_sum,
+#           name = &quot;2018&quot;, type = &quot;pie&quot;)
+# p2018
+
+print(&quot;Hola mundo&quot;)</code></pre>
+<pre><code>## [1] &quot;Hola mundo&quot;</code></pre>
+<p></br></p>
+</div>
+<div id="tabla-de-métodos-de-pago" class="section level2">
+<h2>Tabla de métodos de pago</h2>
+<pre class="r"><code># # Ticket promedio por medio de pago
+# tmp &lt;- d[logic, .(
+#   TPT = sum(tpt, na.rm = T)
+#   , `Sum TPV` = sum(tpv, na.rm = T)
+#   , `Avg TPV` = sum(tpv, na.rm = T)/sum(tpt, na.rm = T)
+#   ), keyby = .(medio_pago_principal)]
+# 
+# # Medios de pago más utilizados por departamento
+# tmp2 &lt;- d[logic &amp; !is.na(Departamento) &amp; !Departamento %in% &quot;&quot;, .(
+#   `Sum TPV` = sum(tpv, na.rm = T)
+#   ), keyby = .(Departamento, medio_pago_principal)][order(`Sum TPV`, decreasing = T)]
+# tmp2 &lt;- tmp2[, .(`Top 3 Departaments` = top_(Departamento, `Sum TPV`)), keyby = .(medio_pago_principal)]
+# tmp &lt;- tmp[tmp2]
+# 
+# render_table(dt = tmp, number = &quot;TPT&quot;, currency = c(&quot;Sum TPV&quot;, &quot;Avg TPV&quot;), dom = &quot;tr&quot;, pageLength = nrow(tmp))
+
+
+print(&quot;Hola mundo&quot;)</code></pre>
+<pre><code>## [1] &quot;Hola mundo&quot;</code></pre>
+<p></br></p>
+</div>
 
 <p>Copyright &copy; 2019 PayU & Fidelio, todos los derechos reservados.</p>
 

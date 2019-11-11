@@ -12,7 +12,7 @@
 
 
 
-<title>Colombia: payment geography</title>
+<title>Colombia</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -318,43 +318,79 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Colombia: payment geography</h1>
+<h1 class="title toc-ignore">Colombia</h1>
 
 </div>
 
 
 <ol style="list-style-type: decimal">
-<li>Colombia in Latin America (MX 2 AR)</li>
+<li>Gráfico de barras que contiene en el eje X cada mes y cada barra está coloreada por la categoría de método de pagos (son 4).</li>
+<li>Tabla del detalle por mes.</li>
 </ol>
-<ul>
-<li>Country’s context (economic growth, peace agreement)</li>
-<li>Relative poblational size</li>
-<li>Spacial (areas)</li>
-<li>Economic volume / transactional</li>
-</ul>
-<ol start="2" style="list-style-type: decimal">
-<li>Colombia as a country</li>
-</ol>
-<ul>
-<li>Market’s evolution (Bancarization)</li>
-<li>Infraestructure (Internet, smartphones, socioeconomical levels, zones, ages)</li>
-</ul>
-<ol start="3" style="list-style-type: decimal">
-<li>Métodos de Pago en Colombia</li>
-</ol>
-<ul>
-<li>Categorías de pago (Efectivo, Débito y Crédito).</li>
-<li>Métodos de pago específicos.</li>
-</ul>
-<ol start="4" style="list-style-type: decimal">
-<li>Regiones de Colombia</li>
-<li>Industrias en Colombia</li>
-<li>Guía de mercado</li>
-</ol>
-<ul>
-<li>Recomendaciones por industria, sectores y operación.</li>
-</ul>
 <p></br></p>
+<div id="gráfico-de-barras" class="section level2">
+<h2>Gráfico de barras</h2>
+<pre class="r"><code># data &lt;- d[, .(tpv = sum(tpv)), keyby = .(categoria_pago, month)]
+# plot_ly(
+#   data = data
+#   , x = ~factor(month)
+#   , y = ~tpv
+#   , color = ~categoria_pago
+#   , type = &#39;bar&#39;, name = &#39;&#39;) %&gt;%
+#   layout(
+#     yaxis = list(title = &#39;Ventas&#39;)
+#     , xaxis = list(title = &#39;&#39;)
+#     , barmode = &#39;stack&#39;)
+
+print(&quot;Hola mundo&quot;)</code></pre>
+<pre><code>## [1] &quot;Hola mundo&quot;</code></pre>
+</div>
+<div id="tabla-mensual" class="section level2">
+<h2>Tabla mensual</h2>
+<div id="section" class="section level3">
+<h3>2018</h3>
+<pre class="r"><code># # ---- Análisis de datos ----
+# # logic &lt;- !is.na(d$id_mpio) &amp; d$month &gt;= &quot;2019-01-01&quot; &amp; d$month &lt; &quot;2019-07-01&quot;
+# tmp &lt;- d[, .(
+#   TPT = sum(tpt, na.rm = T)
+#   , `Sum TPV` = sum(tpv, na.rm = T)
+#   , `Avg TPV` = sum(tpv, na.rm = T)/sum(tpt, na.rm = T)
+#   ), keyby = .(month)]
+# # obtener método de pago
+# tmp2 &lt;- d[, .(
+#   `Sum TPV` = sum(tpv, na.rm = T)
+#   ), keyby = .(month, medio_pago_principal)][order(`Sum TPV`, decreasing = T)]
+# tmp2 &lt;- tmp2[, .(`Top 3 medio de pago` = top_(medio_pago_principal, `Sum TPV`)), keyby = month]
+# tmp &lt;- tmp[tmp2]
+# 
+# # obtener departamento
+# tmp2 &lt;- d[!is.na(Departamento) &amp; !Departamento %in% &quot;&quot;, .(
+#   `Sum TPV` = sum(tpv, na.rm = T)
+#   ), keyby = .(month, Departamento)][order(`Sum TPV`, decreasing = T)]
+# tmp2 &lt;- tmp2[, .(`Top 3 departamento` = top_(Departamento, `Sum TPV`)), keyby = month]
+# tmp &lt;- tmp[tmp2]
+# 
+# # Omitir columnas sensibles
+# tmp &lt;- tmp[, .(month, TPT, `Avg TPV`, `Top 3 medio de pago`, `Top 3 departamento`)]
+# 
+# tmp2 &lt;- tmp[year(month) %in% &quot;2018&quot;]
+# tmp2$month &lt;- paste0(year(tmp2$month), &quot;-&quot;, month.abb[(month(tmp2$month))])
+# render_table(dt = tmp2, number = &quot;TPT&quot;, currency = c(&quot;Sum TPV&quot;, &quot;Avg TPV&quot;), dom = &quot;tr&quot;, pageLength = 20)
+
+print(&quot;Hola mundo&quot;)</code></pre>
+<pre><code>## [1] &quot;Hola mundo&quot;</code></pre>
+</div>
+<div id="section-1" class="section level3">
+<h3>2019</h3>
+<pre class="r"><code># tmp2 &lt;- tmp[year(month) %in% &quot;2019&quot;]
+# tmp2$month &lt;- paste0(year(tmp2$month), &quot;-&quot;, month.abb[(month(tmp2$month))])
+# render_table(dt = tmp2, number = &quot;TPT&quot;, currency = c(&quot;Sum TPV&quot;, &quot;Avg TPV&quot;), dom = &quot;tr&quot;, pageLength = 20)
+
+print(&quot;Hola mundo&quot;)</code></pre>
+<pre><code>## [1] &quot;Hola mundo&quot;</code></pre>
+<p></br></p>
+</div>
+</div>
 
 <p>Copyright &copy; 2019 PayU & Fidelio, todos los derechos reservados.</p>
 

@@ -12,7 +12,7 @@
 
 
 
-<title>Colombia: payment geography</title>
+<title>Industries</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -318,43 +318,51 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Colombia: payment geography</h1>
+<h1 class="title toc-ignore">Industries</h1>
 
 </div>
 
 
 <ol style="list-style-type: decimal">
-<li>Colombia in Latin America (MX 2 AR)</li>
+<li>Gráfico de barras ordenando de mayor a menos en ticket promedio para todos los departamentos.</li>
+<li>Mapa coloreado por indicador creado para visualizar departamentos con mayor importancia y con bajo monto de transacciones.</li>
+<li>Mapa coloreado por el método de pago más utilizado.</li>
 </ol>
-<ul>
-<li>Country’s context (economic growth, peace agreement)</li>
-<li>Relative poblational size</li>
-<li>Spacial (areas)</li>
-<li>Economic volume / transactional</li>
-</ul>
-<ol start="2" style="list-style-type: decimal">
-<li>Colombia as a country</li>
-</ol>
-<ul>
-<li>Market’s evolution (Bancarization)</li>
-<li>Infraestructure (Internet, smartphones, socioeconomical levels, zones, ages)</li>
-</ul>
-<ol start="3" style="list-style-type: decimal">
-<li>Métodos de Pago en Colombia</li>
-</ol>
-<ul>
-<li>Categorías de pago (Efectivo, Débito y Crédito).</li>
-<li>Métodos de pago específicos.</li>
-</ul>
-<ol start="4" style="list-style-type: decimal">
-<li>Regiones de Colombia</li>
-<li>Industrias en Colombia</li>
-<li>Guía de mercado</li>
-</ol>
-<ul>
-<li>Recomendaciones por industria, sectores y operación.</li>
-</ul>
 <p></br></p>
+<div id="mapa-por-municipio" class="section level2 tabset">
+<h2>Mapa por municipio</h2>
+<div id="importancia-económica-según-dane-mm-cop" class="section level3">
+<h3>Importancia económica según DANE (MM COP)</h3>
+<pre class="r"><code># # Plot economic importance by cities
+# plot_shape(shape = mpios, label = &quot;NOMBRE_MPI&quot;, color = &quot;valor_agregado_MMCOP&quot;, logarithm = T)
+
+print(&quot;Hola mundo&quot;)</code></pre>
+<pre><code>## [1] &quot;Hola mundo&quot;</code></pre>
+<p></br></p>
+</div>
+<div id="cantidad-de-transacciones-tpt" class="section level3">
+<h3>Cantidad de transacciones (TPT)</h3>
+<pre class="r"><code># # Plot cities TPT for 2019-I
+# tpt &lt;- d[logic, .(TPT = sum(tpt)), keyby = .(MPIOS =id_mpio)]
+# mpios &lt;- raster::merge(x = mpios, y = tpt, by = &quot;MPIOS&quot;)
+# plot_shape(shape = mpios, label = &quot;NOMBRE_MPI&quot;, color = &quot;TPT&quot;, logarithm = T)
+
+print(&quot;Hola mundo&quot;)</code></pre>
+<pre><code>## [1] &quot;Hola mundo&quot;</code></pre>
+<p></br></p>
+</div>
+<div id="monto-de-las-transacciones-tpv" class="section level3">
+<h3>Monto de las transacciones (TPV)</h3>
+<pre class="r"><code># # Plot cities TPV for 2019-I
+# tpv &lt;- d[logic, .(TPV = sum(tpv)), keyby = .(MPIOS =id_mpio)]
+# mpios &lt;- raster::merge(x = mpios, y = tpv, by = &quot;MPIOS&quot;)
+# plot_shape(shape = mpios, label = &quot;NOMBRE_MPI&quot;, color = &quot;TPV&quot;, logarithm = T)
+
+print(&quot;Hola mundo&quot;)</code></pre>
+<pre><code>## [1] &quot;Hola mundo&quot;</code></pre>
+<p></br></p>
+</div>
+</div>
 
 <p>Copyright &copy; 2019 PayU & Fidelio, todos los derechos reservados.</p>
 
