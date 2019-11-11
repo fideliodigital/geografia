@@ -23,6 +23,13 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.9.0/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="site_libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-1.46.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="site_libs/plotly-main-1.46.1/plotly-latest.min.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -323,70 +330,106 @@ $(document).ready(function () {
 </div>
 
 
-<ol style="list-style-type: decimal">
-<li>Gráfico de barras que contiene en el eje X cada mes y cada barra está coloreada por la categoría de método de pagos (son 4).</li>
-<li>Tabla del detalle por mes.</li>
-</ol>
-<p></br></p>
 <div id="gráfico-de-barras" class="section level2">
 <h2>Gráfico de barras</h2>
-<pre class="r"><code># data &lt;- d[, .(tpv = sum(tpv)), keyby = .(categoria_pago, month)]
-# plot_ly(
-#   data = data
-#   , x = ~factor(month)
-#   , y = ~tpv
-#   , color = ~categoria_pago
-#   , type = &#39;bar&#39;, name = &#39;&#39;) %&gt;%
-#   layout(
-#     yaxis = list(title = &#39;Ventas&#39;)
-#     , xaxis = list(title = &#39;&#39;)
-#     , barmode = &#39;stack&#39;)
-
-print(&quot;Hola mundo&quot;)</code></pre>
-<pre><code>## [1] &quot;Hola mundo&quot;</code></pre>
+<pre><code>##       payment_method      N
+##  1:             VISA 152273
+##  2:       MASTERCARD 131641
+##  3:           EFECTY  53145
+##  4:             AMEX  47649
+##  5:              PSE  45332
+##  6:           BALOTO  29472
+##  7:           DINERS  19789
+##  8:  BANK_REFERENCED   7350
+##  9:       VISA_DEBIT   4940
+## 10:              CMR   3607
+## 11: CASH_ON_DELIVERY   2596
+## 12:          CODENSA   2526
+## 13:          LENDING   1852
+## 14:      OTHERS_CASH    866
+## 15:        ACH_DEBIT     NA
+## 16:    BANK_TRANSFER     NA
+##                                                                                                            Top industry
+##  1:                    Transport services (36.2%), Sales in general (19.7%), Entertainment, tourism and leisure (13.9%)
+##  2:                      Transport services (29.2%), Sales in general (23.5%), Entertainment, tourism and leisure (16%)
+##  3:                       Sales in general (28.8%), Clothing and footwear (15.3%), Clinical and medical services (9.9%)
+##  4:                    Transport services (35.5%), Sales in general (18.9%), Entertainment, tourism and leisure (14.6%)
+##  5: Financial and accounting services (31.3%), Technology / telecommunications (14%), Public services and taxes (10.6%)
+##  6:                                 Clothing and footwear (20.5%), Sales in general (19.1%), Transport services (13.6%)
+##  7:                    Transport services (33.8%), Sales in general (19.3%), Entertainment, tourism and leisure (16.5%)
+##  8:               Architecture, building and engineering (47.4%), Sales in general (15.4%), Education and sports (8.8%)
+##  9:    Technology / telecommunications (41.4%), Entertainment, tourism and leisure (30.6%), Education and sports (7.1%)
+## 10:                                                Sales in general (71.3%), Entertainment, tourism and leisure (28.7%)
+## 11:                        Clothing and footwear (35%), Sales in general (23.9%), Clinical and medical services (18.9%)
+## 12:                      Sales in general (36.7%), Technology / telecommunications (27%), Clothing and footwear (12.9%)
+## 13:                    Clothing and footwear (25.9%), Technology / telecommunications (20.3%), Sales in general (19.4%)
+## 14:                                Specialized services (19.4%), Sales in general (17.6%), Education and sports (17.2%)
+## 15:                                                                                                                &lt;NA&gt;
+## 16:                                                                                                                &lt;NA&gt;
+##                                                              Top Departamento
+##  1:  Santafe De Bogota D.c (40.1%), Antioquia (16.4%), Valle Del Cauca (7.9%)
+##  2:  Santafe De Bogota D.c (31.7%), Antioquia (20.3%), Valle Del Cauca (8.5%)
+##  3:   Santafe De Bogota D.c (11.3%), Antioquia (9.1%), Valle Del Cauca (7.6%)
+##  4:  Santafe De Bogota D.c (31.4%), Antioquia (27.8%), Valle Del Cauca (6.6%)
+##  5:  Santafe De Bogota D.c (28.7%), Antioquia (23.3%), Valle Del Cauca (7.3%)
+##  6: Antioquia (19.3%), Santafe De Bogota D.c (15.8%), Valle Del Cauca (10.3%)
+##  7:   Santafe De Bogota D.c (39.5%), Antioquia (9.3%), Valle Del Cauca (6.2%)
+##  8:   Santafe De Bogota D.c (17.9%), Antioquia (15%), Valle Del Cauca (11.9%)
+##  9:   Santafe De Bogota D.c (37.6%), Valle Del Cauca (9.3%), Santander (8.5%)
+## 10:   Santafe De Bogota D.c (25%), Antioquia (19.4%), Valle Del Cauca (13.1%)
+## 11:   Santafe De Bogota D.c (23.8%), Antioquia (9.7%), Valle Del Cauca (9.5%)
+## 12:       Santafe De Bogota D.c (82.6%), Cundinamarca (12.3%), Antioquia (1%)
+## 13:  Santafe De Bogota D.c (31.1%), Antioquia (18.8%), Valle Del Cauca (8.1%)
+## 14:                Norte De Santander (46%), Antioquia (26.6%), Tolima (8.4%)
+## 15:                                                                      &lt;NA&gt;
+## 16:                                                                      &lt;NA&gt;
+##                                                                                                                                                          Top Ciudad
+##  1:                                               Bogotá Distrito Capital, Santafe De Bogota D.c (40.1%), Medellín, Antioquia (11.1%), Cali, Valle Del Cauca (5.7%)
+##  2:                                               Bogotá Distrito Capital, Santafe De Bogota D.c (31.7%), Medellín, Antioquia (13.3%), Cali, Valle Del Cauca (5.8%)
+##  3:                                                     Bogotá Distrito Capital, Santafe De Bogota D.c (11.3%), Cali, Valle Del Cauca (4%), Florencia, Caquetá (4%)
+##  4:                                               Bogotá Distrito Capital, Santafe De Bogota D.c (31.4%), Medellín, Antioquia (18.6%), Cali, Valle Del Cauca (4.4%)
+##  5:                                               Bogotá Distrito Capital, Santafe De Bogota D.c (28.7%), Medellín, Antioquia (13.8%), Cali, Valle Del Cauca (4.9%)
+##  6:                                                Bogotá Distrito Capital, Santafe De Bogota D.c (15.8%), Medellín, Antioquia (9.3%), Cali, Valle Del Cauca (5.9%)
+##  7:                                                Bogotá Distrito Capital, Santafe De Bogota D.c (39.5%), Medellín, Antioquia (6.4%), Cali, Valle Del Cauca (4.4%)
+##  8:                                                Bogotá Distrito Capital, Santafe De Bogota D.c (17.9%), Medellín, Antioquia (8.8%), Cali, Valle Del Cauca (8.4%)
+##  9: Bogotá Distrito Capital, Santafe De Bogota D.c (37.6%), Barranquilla, Distrito especial, industrial y portuario, Atlántico (7.1%), Cali, Valle Del Cauca (6.6%)
+## 10:                                                 Bogotá Distrito Capital, Santafe De Bogota D.c (25%), Medellín, Antioquia (10.9%), Cali, Valle Del Cauca (8.9%)
+## 11:                                                Bogotá Distrito Capital, Santafe De Bogota D.c (23.8%), Medellín, Antioquia (5.6%), Cali, Valle Del Cauca (4.4%)
+## 12:                                                    Bogotá Distrito Capital, Santafe De Bogota D.c (82.6%), Soacha, Cundinamarca (4.3%), Chía, Cundinamarca (1%)
+## 13:                                               Bogotá Distrito Capital, Santafe De Bogota D.c (31.1%), Medellín, Antioquia (11.2%), Cali, Valle Del Cauca (6.8%)
+## 14:                                           Cúcuta, Norte De Santander (38.7%), Bogotá Distrito Capital, Santafe De Bogota D.c (7.5%), Medellín, Antioquia (7.5%)
+## 15:                                                                                                                                                            &lt;NA&gt;
+## 16:                                                                                                                                                            &lt;NA&gt;
+##     min_tpv  mean_tpv  median_tpv      max_tpv      sum_tpv
+##  1:       0  27163357    384070.0  90414701336 4.136246e+12
+##  2:       0  20417414    374580.0  49468029789 2.687769e+12
+##  3:   20000   7309404    355273.0   3866627018 3.884583e+11
+##  4:     100   9542816    352637.0   9868439709 4.547056e+11
+##  5:     885 193019124    330669.0 171232026093 8.749943e+12
+##  6:    3000   3917942    213126.5   1170106540 1.154696e+11
+##  7:     100   7214672    334824.0   3114542178 1.427711e+11
+##  8:     305  17063811    446943.0   4070557925 1.254190e+11
+##  9:    1883   5588447    207370.0   1381283342 2.760693e+10
+## 10:   19800  12790704   1169800.0   1062422809 4.613607e+10
+## 11:   21900   6340078    471058.0    386782442 1.645884e+10
+## 12:    1900   6552347    396110.0    534856013 1.655123e+10
+## 13:    4999  10280176    204227.0    790750075 1.903889e+10
+## 14:    3819  19166204   1682800.0    577554148 1.659793e+10
+## 15:    1320 786534632    106621.0   3625680950 2.988832e+10
+## 16:  530000 902292669 848279601.0   2321075007 1.714356e+10</code></pre>
+<p><div id="htmlwidget-21340a166039363d5410" style="width:100%;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-21340a166039363d5410">{"x":{"visdat":{"bac7f8bbe9b":["function () ","plotlyVisDat"],"bac6243493a":["function () ","data"],"bac6a626446":["function () ","data"]},"cur_data":"bac6a626446","attrs":{"bac6243493a":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"values":{},"labels":{},"type":"pie","name":2018,"domain":{"row":0,"column":0},"hovertemplate":{},"inherit":true},"bac6a626446":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"values":{},"labels":{},"type":"pie","name":2019,"domain":{"row":1,"column":0},"hovertemplate":{},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"payment_method (2018-2019)","showlegend":false,"grid":{"rows":2,"columns":1},"xaxis":{"showgrid":false,"zeroline":false,"showticklabels":false},"yaxis":{"showgrid":false,"zeroline":false,"showticklabels":false},"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false},"data":[{"values":[6178745207,236962100867,59300368322,65084040319,10989884601,9852116118,25365607980,7026435905,78149142262,156911744921,7426840667,1318668045165,5808297066,4441414396686,2042291601006,6334627424],"labels":["ACH_DEBIT","AMEX","BALOTO","BANK_REFERENCED","BANK_TRANSFER","CASH_ON_DELIVERY","CMR","CODENSA","DINERS","EFECTY","LENDING","MASTERCARD","OTHERS_CASH","PSE","VISA","VISA_DEBIT"],"type":"pie","name":2018,"domain":{"row":0,"column":0},"hovertemplate":["ACH_DEBIT","AMEX","BALOTO","BANK_REFERENCED","BANK_TRANSFER","CASH_ON_DELIVERY","CMR","CODENSA","DINERS","EFECTY","LENDING","MASTERCARD","OTHERS_CASH","PSE","VISA","VISA_DEBIT"],"marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null},{"values":[23709570790,217743543352,56169230900,60334967703,6153676104,6606726235,20770461707,9524791503,64622000405,231546552190,11612045248,1369100795776,10789635627,4308528547418,2093954248448,21272298358],"labels":["ACH_DEBIT","AMEX","BALOTO","BANK_REFERENCED","BANK_TRANSFER","CASH_ON_DELIVERY","CMR","CODENSA","DINERS","EFECTY","LENDING","MASTERCARD","OTHERS_CASH","PSE","VISA","VISA_DEBIT"],"type":"pie","name":2019,"domain":{"row":1,"column":0},"hovertemplate":["ACH_DEBIT","AMEX","BALOTO","BANK_REFERENCED","BANK_TRANSFER","CASH_ON_DELIVERY","CMR","CODENSA","DINERS","EFECTY","LENDING","MASTERCARD","OTHERS_CASH","PSE","VISA","VISA_DEBIT"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-6d6ca55e7562307c02ac" style="width:100%;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6d6ca55e7562307c02ac">{"x":{"visdat":{"bac48817771":["function () ","plotlyVisDat"]},"cur_data":"bac48817771","attrs":{"bac48817771":{"x":{},"y":{},"hovertemplate":"Category: %{x}","color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"title":"","showticklabels":false},"barmode":"stack","xaxis":{"domain":[0,1],"automargin":true,"title":"cat1_","type":"category","categoryorder":"array","categoryarray":["2018-01","2018-02","2018-03","2018-04","2018-05","2018-06","2018-07","2018-08","2018-09","2018-10","2018-11","2018-12","2019-01","2019-02","2019-03","2019-04","2019-05","2019-06","2019-07","2019-08","2019-09"]},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"x":["2018-01","2018-02","2018-03","2018-04","2018-05","2018-06","2018-07","2018-08","2018-09","2018-10","2018-11","2018-12","2019-01","2019-02","2019-03","2019-04","2019-05","2019-06","2019-07","2019-08","2019-09"],"y":[1019434795,1202971533,1249977962,1400176121,1661259149,1637765433,1685028893,1698091022,1731702669,1819518541,2018508213,154522454,1380214817,1615164689,1768244181,1651331492,2279498326,2316674396,2346292421,2440422573,2420928588],"hovertemplate":["Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}"],"type":"bar","name":"Alternative","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2018-01","2018-02","2018-03","2018-04","2018-05","2018-06","2018-07","2018-08","2018-09","2018-10","2018-11","2018-12","2019-01","2019-02","2019-03","2019-04","2019-05","2019-06","2019-07","2019-08","2019-09"],"y":[2894913654,4779237523,6244478850,6015385189,6661367023,5434073180,6544096009,6242317825,5390774634,7230946872,7508623300,137826260,7037158431,6107697922,5598226282,6015157886,7979059541,6089886980,6868719103,8061010987,6578050571],"hovertemplate":["Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}"],"type":"bar","name":"Bank Referenced","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2018-01","2018-02","2018-03","2018-04","2018-05","2018-06","2018-07","2018-08","2018-09","2018-10","2018-11","2018-12","2019-01","2019-02","2019-03","2019-04","2019-05","2019-06","2019-07","2019-08","2019-09"],"y":[15943297949,14398804787,15635128598,18820915889,19101459167,20262864483,23252249188,23692226993,23301845179,22799285650,34711921510,1090295517,26697658719,25386468621,29208342566,30115660011,33017966209,36656502322,42395888603,40531052643,40649555127],"hovertemplate":["Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}"],"type":"bar","name":"Cash","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2018-01","2018-02","2018-03","2018-04","2018-05","2018-06","2018-07","2018-08","2018-09","2018-10","2018-11","2018-12","2019-01","2019-02","2019-03","2019-04","2019-05","2019-06","2019-07","2019-08","2019-09"],"y":[214181574455,194127396469,270502562766,350124676854,366288943482,367120283767,370876129526,358276310723,356402516522,377792187110,481494627703,1275723808,397839882395,372808432911,422984050820,384027703220,446913142587,449677421943,441409543055,430823800323,429231863937],"hovertemplate":["Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}"],"type":"bar","name":"Credit Card","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"textfont":{"color":"rgba(231,138,195,1)"},"error_y":{"color":"rgba(231,138,195,1)"},"error_x":{"color":"rgba(231,138,195,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2018-01","2018-02","2018-03","2018-04","2018-05","2018-06","2018-07","2018-08","2018-09","2018-10","2018-11","2018-12","2019-01","2019-02","2019-03","2019-04","2019-05","2019-06","2019-07","2019-08","2019-09"],"y":[295920294369,285478865260,352453619668,373950404819,418377069461,447185938619,468988197571,448744803481,429515958491,454341646484,478712300869,258670225,466467093144,432465044002,483272773785,453468016279,493191234509,510613129915,533622515656,495402315095,485008294181],"hovertemplate":["Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}","Category: %{x}"],"type":"bar","name":"Debit Account","marker":{"color":"rgba(166,216,84,1)","line":{"color":"rgba(166,216,84,1)"}},"textfont":{"color":"rgba(166,216,84,1)"},"error_y":{"color":"rgba(166,216,84,1)"},"error_x":{"color":"rgba(166,216,84,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-86013ed1fee97dd83083" style="width:100%;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-86013ed1fee97dd83083">{"x":{"visdat":{"bac53b45cfa":["function () ","plotlyVisDat"]},"cur_data":"bac53b45cfa","attrs":{"bac53b45cfa":{"x":{},"y":{},"hovertemplate":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"% Change tpv for each industry (2018 - 2019)","xaxis":{"domain":[0,1],"automargin":true,"showticklabels":false,"title":""},"yaxis":{"domain":[0,1],"automargin":true,"title":"","type":"category","categoryorder":"array","categoryarray":["Miscellaneous and others","Technology / telecommunications","Food, stores and restaurants","Architecture, building and engineering","Clothing and footwear","Home goods","Cars and service stations","Transport services","Public services and taxes","Entertainment, tourism and leisure","Sales in general","Financial and accounting services","Clinical and medical services","Specialized services","Associations and organizations","Education and sports","Machinery, equipment and furnishings","Publications and stationery","Agricultural and industrial services"]},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"x":[0.401581122305767,0.216420665728368,0.152868217451144,0.14341305129808,0.0576946002334042,0.0115052657642347,0.00821569568006231,0.00525296826582533,-0.00794693534813584,-0.0222535654593058,-0.0647408177096007,-0.100930608456863,-0.456088421134547],"y":["Publications and stationery","Education and sports","Associations and organizations","Specialized services","Clinical and medical services","Financial and accounting services","Sales in general","Entertainment, tourism and leisure","Public services and taxes","Cars and service stations","Architecture, building and engineering","Technology / telecommunications","Miscellaneous and others"],"hovertemplate":["Category: Publications and stationery<br>Top payment_method: PSE (44.5%)","Category: Education and sports<br>Top payment_method: PSE (50.3%)","Category: Associations and organizations<br>Top payment_method: PSE (75%)","Category: Specialized services<br>Top payment_method: PSE (56.9%)","Category: Clinical and medical services<br>Top payment_method: PSE (37%)","Category: Financial and accounting services<br>Top payment_method: PSE (93.4%)","Category: Sales in general<br>Top payment_method: PSE (31.6%)","Category: Entertainment, tourism and leisure<br>Top payment_method: PSE (38.3%)","Category: Public services and taxes<br>Top payment_method: PSE (91.9%)","Category: Cars and service stations<br>Top payment_method: PSE (44.2%)","Category: Architecture, building and engineering<br>Top payment_method: PSE (69.7%)","Category: Technology / telecommunications<br>Top payment_method: PSE (59.7%)","Category: Miscellaneous and others<br>Top payment_method: PSE (31.4%)"],"type":"bar","orientation":"h","name":"PSE","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[0.491084507779464,0.275073141464623,-0.0129658810998837,-0.0230262951219599,-0.0235586144479545,-0.0739988616040982],"y":["Agricultural and industrial services","Machinery, equipment and furnishings","Transport services","Home goods","Clothing and footwear","Food, stores and restaurants"],"hovertemplate":["Category: Agricultural and industrial services<br>Top payment_method: VISA (35.3%)","Category: Machinery, equipment and furnishings<br>Top payment_method: VISA (36.2%)","Category: Transport services<br>Top payment_method: VISA (46.7%)","Category: Home goods<br>Top payment_method: VISA (35%)","Category: Clothing and footwear<br>Top payment_method: VISA (29.8%)","Category: Food, stores and restaurants<br>Top payment_method: VISA (43.9%)"],"type":"bar","orientation":"h","name":"VISA","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script></p>
 </div>
 <div id="tabla-mensual" class="section level2">
 <h2>Tabla mensual</h2>
 <div id="section" class="section level3">
 <h3>2018</h3>
-<pre class="r"><code># # ---- Análisis de datos ----
-# # logic &lt;- !is.na(d$id_mpio) &amp; d$month &gt;= &quot;2019-01-01&quot; &amp; d$month &lt; &quot;2019-07-01&quot;
-# tmp &lt;- d[, .(
-#   TPT = sum(tpt, na.rm = T)
-#   , `Sum TPV` = sum(tpv, na.rm = T)
-#   , `Avg TPV` = sum(tpv, na.rm = T)/sum(tpt, na.rm = T)
-#   ), keyby = .(month)]
-# # obtener método de pago
-# tmp2 &lt;- d[, .(
-#   `Sum TPV` = sum(tpv, na.rm = T)
-#   ), keyby = .(month, medio_pago_principal)][order(`Sum TPV`, decreasing = T)]
-# tmp2 &lt;- tmp2[, .(`Top 3 medio de pago` = top_(medio_pago_principal, `Sum TPV`)), keyby = month]
-# tmp &lt;- tmp[tmp2]
-# 
-# # obtener departamento
-# tmp2 &lt;- d[!is.na(Departamento) &amp; !Departamento %in% &quot;&quot;, .(
-#   `Sum TPV` = sum(tpv, na.rm = T)
-#   ), keyby = .(month, Departamento)][order(`Sum TPV`, decreasing = T)]
-# tmp2 &lt;- tmp2[, .(`Top 3 departamento` = top_(Departamento, `Sum TPV`)), keyby = month]
-# tmp &lt;- tmp[tmp2]
-# 
-# # Omitir columnas sensibles
-# tmp &lt;- tmp[, .(month, TPT, `Avg TPV`, `Top 3 medio de pago`, `Top 3 departamento`)]
-# 
-# tmp2 &lt;- tmp[year(month) %in% &quot;2018&quot;]
-# tmp2$month &lt;- paste0(year(tmp2$month), &quot;-&quot;, month.abb[(month(tmp2$month))])
-# render_table(dt = tmp2, number = &quot;TPT&quot;, currency = c(&quot;Sum TPV&quot;, &quot;Avg TPV&quot;), dom = &quot;tr&quot;, pageLength = 20)
-
-print(&quot;Hola mundo&quot;)</code></pre>
 <pre><code>## [1] &quot;Hola mundo&quot;</code></pre>
 </div>
 <div id="section-1" class="section level3">
 <h3>2019</h3>
-<pre class="r"><code># tmp2 &lt;- tmp[year(month) %in% &quot;2019&quot;]
-# tmp2$month &lt;- paste0(year(tmp2$month), &quot;-&quot;, month.abb[(month(tmp2$month))])
-# render_table(dt = tmp2, number = &quot;TPT&quot;, currency = c(&quot;Sum TPV&quot;, &quot;Avg TPV&quot;), dom = &quot;tr&quot;, pageLength = 20)
-
-print(&quot;Hola mundo&quot;)</code></pre>
 <pre><code>## [1] &quot;Hola mundo&quot;</code></pre>
 <p></br></p>
 </div>
