@@ -367,20 +367,48 @@ background-image: url('../img/logoPayuVerde.png');
 #MetodosPago p
 {
   color: #757575;
-  padding: 0 50px
+  padding: 0 50px;
+  text-align: justify;
 }
 
-#MetodosPago p+ul {
+#MetodosPago p+p+ul {
   display: flex;
   justify-content: space-between;
   list-style: none;
 }
 
-#MetodosPago p+ul li {
+#MetodosPago p+p+ul li {
   width: 30%;  
-  height: 100px;  
+  height: 200px;  
   background-color: #FFFFFF;
   border: 1px solid #ecebef;
-  border-radius: 10px;
+  border-radius: 20px;
   margin: 8px;
+  padding: 20px
+}
+
+#MetodosPago #contenido h3{
+  font-weight: bolder;
+  color: #757575
+}
+
+#MetodosPago #contenido h3+ul{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+#MetodosPago #contenido h3+ul li {
+  width: 30%;   
+  margin: 8px;
+  color: #C4D520;
+  text-decoration: underline;
+  justify-content: center;
+  padding: 20px;
+  font-size: 20px;
+}
+
+#MetodosPago .columna{
+  border: 5px solid #D4D4D6;
+  border-radius: 20px;
 }
