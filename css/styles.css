@@ -67,6 +67,8 @@ font-weight: bold;
   position: fixed;
   min-width: 100vw;
   background-color: white;
+  background-size: cover;
+
 }
 
 /*subraya la seccion activa del doc en la barra de navegacion*/
@@ -79,11 +81,10 @@ text-decoration: underline;
 
 /*Agrega el logo de payu a la barra superrior*/
 a.navbar-brand:after 
-
 {
 content: "";
 color: transparent;
-background-image: url('../img/logoPayu.png');
+background-image: url('../img/logoPayuVerde.png');
 background-blend-mode: luminosity;
 background-repeat: no-repeat;
 background-color: transparent;
@@ -106,7 +107,6 @@ margin: 0;
 
 min-width: 100vw;
 min-height: 100vh;
-/* background-size: cover; */
 background-size: contain;
 display: flex;
 /* position: absolute; */
@@ -130,9 +130,11 @@ background-repeat: no-repeat;
 .navbar-default .navbar-nav>li>a, 
 .navbar.navbar-default .navbar-nav>.active>a
 {
-color: white;
+color: #C4D520;
 font-size: 26px;
 }
+
+
 
 /*linea blanca de bajo del menú, va hasta el border*/
 /*#navbar
@@ -143,12 +145,14 @@ margin-right: -20px;
 padding-right: 20px;
 }*/
 
-/*linea blancla debajo del navbar. Va de lado a lado de la pantalla*/
+/*Borde gris debajo del menu, va de lado a lado de la pantalla
+deja semitransparente el menu*/
 .navbar.navbar-default
 {
-/* border-bottom: 1px solid white; */
-border-bottom: none;
-    box-shadow: 0px 40px 0px -39px white;
+  /* border-bottom: 1px solid white; */
+  border-bottom: none;
+  box-shadow: 0px 4px 4px 0px #CECDD2;
+  opacity: 0.8;
 }
 
 /*alinea el navbar a la derecha*/
@@ -246,6 +250,13 @@ font-size: 80px;
 
 }
 
+/*texto en blanco en el header*/
+#inicio .navbar-default .navbar-nav>li>a, 
+#inicio .navbar.navbar-default .navbar-nav>.active>a
+{
+color: white;
+}
+
 /* agrega el fondo fijo a la barra */
 #inicio .navbar 
 {
@@ -253,6 +264,22 @@ font-size: 80px;
 
   background-image: url(../img/fondoHeader.png);
   background-size: cover;
+}
+
+/*Agrega el logo de payu VERDE*/
+#inicio a.navbar-brand:after 
+{
+  background-image: url('../img/logoPayu.png');
+}
+
+/*linea blancla debajo del navbar. Va casi de lado a lado de la pantalla
+quita la transparencia del menu*/
+#inicio .navbar.navbar-default
+{
+    /* border-bottom: 1px solid white; */
+    border-bottom: none;
+    box-shadow: 0px 40px 0px -39px white;
+    opacity: 1;
 }
 
 #por-qué-importan-las-transacciones 
@@ -278,67 +305,35 @@ font-size: 80px;
 /*le pone un fondo de imagen al header en metodos de pago y le ajusta el tamaño*/
 #MetodosPago #header
 {
-text-align: center;
-font-size: 55px;
+
 color: white;
-left: 0;
-margin: 0;
-/* background-image: url(../img/fondoHeader.png); */
 background-image: url(../img/Geografia-pagos-bg3.jpg);
-min-width: 100vw;
 min-height: 50vh;
-/* background-size: cover; */
-background-size: contain;
-display: flex;
-/* position: absolute; */
-background-repeat: no-repeat;
-/* margin-top: -51px; */
+
 }
 
 /*Imagen gris en navbar de metodos de pago*/
 #MetodosPago .navbar
 {
-  background: transparent;
-  position: fixed;
-  
-  background-image: url(../img/Geografia-pagos-bg3.jpg);
-  min-width: 100vw;
-  background-size: cover;
-  background-color: white;
+  /* background-image: url(../img/Geografia-pagos-bg3.jpg); */
 }
 
-/*texto en negro en el header metodos de pago*/
-#MetodosPago .navbar-default .navbar-nav>li>a, 
-#MetodosPago .navbar.navbar-default .navbar-nav>.active>a
-{
-color: #C4D520;
-}
+
 
 
 /*Agrega el logo verde de payu a la barra superrior*/
 #MetodosPago a.navbar-brand:after 
 
 {
-content: "";
-color: transparent;
 background-image: url('../img/logoPayuVerde.png');
-background-blend-mode: luminosity;
-background-repeat: no-repeat;
-background-color: transparent;
-min-height: 104px;
-min-width: 205px;
-top: 10px;
-left: 78px;
-position: absolute;
-z-index: 1000;
 }
 
 /*centra el texto del header dentro de la imagen*/
 #MetodosPago #header h1 
 {
  color: black; 
-margin: auto;
-margin-top: 200px;
+  margin: auto;
+  margin-top: 200px;
 }
 
 #MetodosPago p
@@ -347,18 +342,17 @@ margin-top: 200px;
   padding: 0 50px
 }
 
-
 #MetodosPago p+ul {
+  display: flex;
+  justify-content: space-between;
   list-style: none;
-  padding: 0 50px;
-  margin-left: 0;
 }
 
 #MetodosPago p+ul li {
-  display: inline-block;
-  width: 30%;
-  height: 100px;
-  padding: 5px;
-  border: 1px solid blue;    
-  background-color: yellow; 
+  width: 30%;  
+  height: 100px;  
+  background-color: #FFFFFF;
+  border: 1px solid #ecebef;
+  border-radius: 10px;
+  margin: 8px;
 }
