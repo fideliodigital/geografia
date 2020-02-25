@@ -27,7 +27,10 @@ background-color: #F8F7FC;
 h1
 {
   font-family: "AmpleSoft" !important;
-
+}
+h2
+{
+  font-size: 50px;
 }
 h2,h3,h4,h5,h6
 {
@@ -51,21 +54,19 @@ font-weight: bold;
 /*Le da un espacio arriba a la barra (diseño)*/
 #navbar.navbar-collapse 
 {
-background: transparent;
-    padding-top: 70px;
+    background: transparent;
+    padding-top: 45px;
+    padding-bottom: 25px;
 }
 
 /*pone la barra de navegacion como transparente*/
 /* agrega el fondo fijo a la barra */
 .navbar 
 {
-background: transparent;
-position: fixed;
-
-background-image: url(../img/fondoHeader.png);
-min-width: 100vw;
-background-size: cover;
-background-color: white;
+  background: transparent;
+  position: fixed;
+  min-width: 100vw;
+  background-color: white;
 }
 
 /*subraya la seccion activa del doc en la barra de navegacion*/
@@ -99,11 +100,10 @@ z-index: 1000;
 {
 text-align: center;
 font-size: 55px;
-color: white;
 left: 0;
 margin: 0;
 /* background-image: url(../img/fondoHeader.png); */
-background-image: url(../img/Geografia-pagos-header.jpg);
+
 min-width: 100vw;
 min-height: 100vh;
 /* background-size: cover; */
@@ -124,13 +124,6 @@ background-repeat: no-repeat;
 
 
 
-/*centra el texto del header dentro de la imagen*/
-#header h1 
-{
- color: white; 
-margin: auto;
-margin-top: 200px;
-}
 
 
 /*texto en blanco en el header*/
@@ -138,6 +131,7 @@ margin-top: 200px;
 .navbar.navbar-default .navbar-nav>.active>a
 {
 color: white;
+font-size: 26px;
 }
 
 /*linea blanca de bajo del menú, va hasta el border*/
@@ -152,7 +146,9 @@ padding-right: 20px;
 /*linea blancla debajo del navbar. Va de lado a lado de la pantalla*/
 .navbar.navbar-default
 {
-border-bottom: 1px solid white;
+/* border-bottom: 1px solid white; */
+border-bottom: none;
+    box-shadow: 0px 40px 0px -39px white;
 }
 
 /*alinea el navbar a la derecha*/
@@ -221,6 +217,43 @@ margin-right: 215px;
 /* CUERPO    */
 /*****************************************/
 
+/* le da espacio a los lados a todos los contenidos del cuerp de la página
+no se le pone al body pq descuadra el header */
+.section
+{
+  padding: 0 50px;
+  color: #757575;
+}
+
+/*****************************************/
+/* Inicio    */
+/*****************************************/
+
+
+#inicio #header
+{
+  background-image: url(../img/Geografia-pagos-header.jpg);
+  color: white;
+}
+
+/*centra el texto del header dentro de la imagen*/
+#inicio #header h1 
+{
+ color: white; 
+margin: auto;
+margin-top: 200px;
+font-size: 80px;
+
+}
+
+/* agrega el fondo fijo a la barra */
+#inicio .navbar 
+{
+ 
+
+  background-image: url(../img/fondoHeader.png);
+  background-size: cover;
+}
 
 #por-qué-importan-las-transacciones 
 {
@@ -231,3 +264,8 @@ margin-right: 215px;
 /*****************************************/
 /* COLOMBIA    */
 /*****************************************/
+#colombia #header
+{
+  background-image: url(../img/fondoColombia.jpg);
+
+}

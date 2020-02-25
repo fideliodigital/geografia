@@ -1,0 +1,10 @@
+1.
+ponerle un id a cada página
+en la class que tiene todo el contenido (container-fluid main-container)
+ edita el html y ponle un id, i.e. metodos-de-pago
+
+ 2. En lo posible dejar las iamgenes con ID con una clase que se llame imagen y sin width
+
+ 3. quitar imagen de portada de la pestaña métodos de pago
+
+ 4. Sacar de la pestaña de inicio el glsaario y la ficha técnica, sugiero moverlos  a Guía
