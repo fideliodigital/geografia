@@ -231,3 +231,98 @@ margin-right: 215px;
 /*****************************************/
 /* COLOMBIA    */
 /*****************************************/
+
+
+/*****************************************/
+/* METODOS PAGO    */
+/*****************************************/
+
+/*******HEADER¨***********/
+
+/*le pone un fondo de imagen al header en metodos de pago y le ajusta el tamaño*/
+#MetodosPago #header
+{
+text-align: center;
+font-size: 55px;
+color: white;
+left: 0;
+margin: 0;
+/* background-image: url(../img/fondoHeader.png); */
+background-image: url(../img/Geografia-pagos-bg3.jpg);
+min-width: 100vw;
+min-height: 50vh;
+/* background-size: cover; */
+background-size: contain;
+display: flex;
+/* position: absolute; */
+background-repeat: no-repeat;
+/* margin-top: -51px; */
+}
+
+/*Imagen gris en navbar de metodos de pago*/
+#MetodosPago .navbar
+{
+  background: transparent;
+  position: fixed;
+  
+  background-image: url(../img/Geografia-pagos-bg3.jpg);
+  min-width: 100vw;
+  background-size: cover;
+  background-color: white;
+}
+
+/*texto en negro en el header metodos de pago*/
+#MetodosPago .navbar-default .navbar-nav>li>a, 
+#MetodosPago .navbar.navbar-default .navbar-nav>.active>a
+{
+color: #C4D520;
+}
+
+
+/*Agrega el logo verde de payu a la barra superrior*/
+#MetodosPago a.navbar-brand:after 
+
+{
+content: "";
+color: transparent;
+background-image: url('../img/logoPayuVerde.png');
+background-blend-mode: luminosity;
+background-repeat: no-repeat;
+background-color: transparent;
+min-height: 104px;
+min-width: 205px;
+top: 10px;
+left: 78px;
+position: absolute;
+z-index: 1000;
+}
+
+/*centra el texto del header dentro de la imagen*/
+#MetodosPago #header h1 
+{
+ color: black; 
+margin: auto;
+margin-top: 200px;
+}
+
+#MetodosPago p
+{
+  color: #757575;
+  padding: 0 50px
+}
+
+
+#MetodosPago p+ul {
+  list-style: none;
+  padding: 0 50px;
+  margin-left: 0;
+}
+
+#MetodosPago p+ul li {
+  display: inline-block;
+  width: 30%;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid blue;    
+  background-color: yellow; 
+}
