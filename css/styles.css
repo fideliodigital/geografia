@@ -313,16 +313,16 @@ margin-top: 200px;
 
 
 #MetodosPago p+ul {
+  display: flex;
+  justify-content: space-between;
   list-style: none;
-  padding: 0 50px;
-  margin-left: 0;
 }
 
 #MetodosPago p+ul li {
-  display: inline-block;
-  width: 30%;
-  height: 100px;
-  padding: 5px;
-  border: 1px solid blue;    
-  background-color: yellow; 
+  width: 30%;  
+  height: 100px;  
+  background-color: #FFFFFF;
+  border: 1px solid #ecebef;
+  border-radius: 10px;
+  margin: 8px;
 }
