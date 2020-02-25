@@ -1,3 +1,7 @@
+/*este css ajusta la vista del html producido por R markdown*/
+
+
+
 /*****************************************/
 /* FUENTES    */
 /*****************************************/
@@ -27,12 +31,17 @@ background-color: #F8F7FC;
 h1
 {
   font-family: "AmpleSoft" !important;
+  color: black;
+  font-size: 50px;
 }
 h2
 {
-  font-size: 50px;
+  font-size: 26px;
+  color: #333333;
+  font-family: "AmpleSoft";
+
 }
-h2,h3,h4,h5,h6
+h3,h4,h5,h6
 {
 
 text-align: center;
@@ -40,15 +49,22 @@ font-family: "AmpleSoft";
 font-weight: bold;
 }
 
+/* AJusta el contenedor general para que no haya bordes ni espacios */
+.container-fluid.main-container {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: initial;
+}
+
 
 
 /*****************************************/
-/* HEADER    */
+/* MENÚ    */
 /*****************************************/
 
 
 
-/*este css ajusta la vista del html producido por R markdown*/
 
 /*pone la barra de navegacion como transparente*/
 /*Le da un espacio arriba a la barra (diseño)*/
@@ -96,33 +112,6 @@ position: absolute;
 z-index: 1000;
 }
 
-/*le pone un fondo de imagen al header y le ajusta el tamaño*/
-#header 
-{
-text-align: center;
-font-size: 55px;
-left: 0;
-margin: 0;
-/* background-image: url(../img/fondoHeader.png); */
-
-min-width: 100vw;
-min-height: 100vh;
-background-size: contain;
-display: flex;
-/* position: absolute; */
-background-repeat: no-repeat;
-/* margin-top: -51px; */
-}
-
-/* AJusta el contenedor d ela imagen para que no haya bordes ni espacios */
-.container-fluid.main-container {
-  margin: 0;
-  padding-left: 0;
-  padding-right: 0;
-  max-width: initial;
-}
-
-
 
 
 
@@ -136,14 +125,6 @@ font-size: 26px;
 
 
 
-/*linea blanca de bajo del menú, va hasta el border*/
-/*#navbar
-{
-    margin-left: -75px;
-border-bottom: 1px solid white;
-margin-right: -20px;
-padding-right: 20px;
-}*/
 
 /*Borde gris debajo del menu, va de lado a lado de la pantalla
 deja semitransparente el menu*/
@@ -205,6 +186,40 @@ margin-right: 215px;
     
 }
 
+
+
+
+/*****************************************/
+/*  HEADER    */
+/*****************************************/
+
+
+/*le pone un fondo de imagen al header y le ajusta el tamaño*/
+#header 
+{
+  text-align: center;
+  font-size: 55px;
+  left: 0;
+  margin: 0;
+  /* background-image: url(../img/fondoHeader.png); */
+
+  min-width: 100vw;
+  min-height: 100vh;
+  background-size: contain;
+  display: flex;
+  /* position: absolute; */
+  background-repeat: no-repeat;
+  /* margin-top: -51px; */
+}
+
+/* formato del texto del header */
+#header h1
+{
+  color: black; 
+  margin: auto;
+}
+
+
 @media (min-width: 1260px)
 {
   /* cuando la pantalla es demasiado grande
@@ -238,15 +253,21 @@ no se le pone al body pq descuadra el header */
 {
   background-image: url(../img/Geografia-pagos-header.jpg);
   color: white;
+  
 }
 
 /*centra el texto del header dentro de la imagen*/
 #inicio #header h1 
 {
  color: white; 
-margin: auto;
 margin-top: 200px;
 font-size: 80px;
+
+}
+
+#inicio h1
+{
+  text-align: center;
 
 }
 
@@ -294,6 +315,16 @@ quita la transparencia del menu*/
 #colombia #header
 {
   background-image: url(../img/fondoColombia.jpg);
+  background-size: auto;
+  
+  position: absolute;
+}
+
+#colombia #header h1
+{
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 160px;
 }
 
 /*****************************************/
@@ -305,11 +336,9 @@ quita la transparencia del menu*/
 /*le pone un fondo de imagen al header en metodos de pago y le ajusta el tamaño*/
 #MetodosPago #header
 {
-
-color: white;
-background-image: url(../img/Geografia-pagos-bg3.jpg);
-min-height: 50vh;
-
+  color: white;
+  background-image: url(../img/Geografia-pagos-bg3.jpg);
+  min-height: 50vh;
 }
 
 /*Imagen gris en navbar de metodos de pago*/
@@ -331,8 +360,7 @@ background-image: url('../img/logoPayuVerde.png');
 /*centra el texto del header dentro de la imagen*/
 #MetodosPago #header h1 
 {
- color: black; 
-  margin: auto;
+
   margin-top: 200px;
 }
 

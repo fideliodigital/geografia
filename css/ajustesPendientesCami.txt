@@ -4,7 +4,30 @@ en la class que tiene todo el contenido (container-fluid main-container)
  edita el html y ponle un id, i.e. metodos-de-pago
 
  2. En lo posible dejar las iamgenes con ID con una clase que se llame imagen y sin width
+ 
+
+ #Colombia
+
+ 1. cambiar el nombre de la imagen por colombia-mapaColombia.png
+ 2. envlover en columnas la imagen anteior y el texto de contexto así:
+
+<div class = "row">
+  
+    <div class = "col-md-4">
+    ```{r}
+    include_graphics("img/portada.jpeg") # Imagen de la portada
+    ```
+    </div>
+    <div class = "col-md-8">
+
+        ## Contexto de país
+        <br>
+        <br>
+        Colombia es un símbolo de resilienci.....
+    </div>
+ </div> #cierra el tag de row
 
  3. quitar imagen de portada de la pestaña métodos de pago
 
  4. Sacar de la pestaña de inicio el glsaario y la ficha técnica, sugiero moverlos  a Guía
+ 
