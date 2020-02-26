@@ -320,11 +320,11 @@ quita la transparencia del menu*/
   position: absolute;
 }
 
+
+
 #colombia #header h1
 {
-  font-size: 50px;
-  font-weight: bold;
-  margin-top: 160px;
+  display: none;
 }
 
 /*****************************************/

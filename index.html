@@ -311,6 +311,13 @@ $(document).ready(function () {
   gtag('js', new Date());
   gtag('config', 'UA-148156941-1');
 </script>
+<script>
+$( document ).ready(function() 
+{
+ var titulo = $("#titulo").attr('class');
+ $(".main-container").attr("id",titulo);
+}
+</script>
 </head>
 
 <div class="fluid-row" id="header">
@@ -322,10 +329,14 @@ $(document).ready(function () {
 </div>
 
 
-<div id="inicio">
+<div id = "titulo" class = "inicio">
+
+
+
 <p><img src="img/portada.jpeg" width="100%" /></p>
 <p><br> <br></p>
-<h2 id="por-qué-importan-las-transacciones">¿Por qué importan las transacciones?</h2>
+<div id="por-qué-importan-las-transacciones" class="section level2">
+<h2>¿Por qué importan las transacciones?</h2>
 <p><br></p>
 <p>Las transacciones se tratan de mucho más que de flujo de dinero, son una tecnología social de intercambio. Son cada motivación, decisión y dinámica que nos permiten entender desde la economía y el desarrollo, hasta la cultura y la política. Son también una forma de explicar cómo hemos llegado a ser la sociedad que somos.</p>
 <p><br></p>
@@ -341,20 +352,24 @@ $(document).ready(function () {
 <p><b>PayU</b></p>
 <p><b>Expertos locales en pagos globales</b></p>
 <p><br></p>
-<h3 id="glosario-de-términos">Glosario de términos</h3>
+<div id="glosario-de-términos" class="section level3">
+<h3>Glosario de términos</h3>
 <ul>
 <li><strong>TPT</strong>: Número de transacciones procesadas</li>
 <li><strong>TPV</strong>: Volumen total de transacciones procesadas</li>
 <li>Modelo agregador</li>
 <li>Modelo gateway</li>
 </ul>
-<h3 id="ficha-técnica">Ficha técnica</h3>
+</div>
+<div id="ficha-técnica" class="section level3">
+<h3>Ficha técnica</h3>
 <p>Período de análisis:</p>
 <ol style="list-style-type: decimal">
 <li><strong>Enero a Diciembre del 2018</strong></li>
 <li><strong>Enero a Diciembre del 2019</strong></li>
 </ol>
 <p>Datos utilizados: agregador exclusivamente.</p>
+</div>
 </div>
 
 <p>Copyright &copy; 2020 PayU & Fidelio, todos los derechos reservados.</p>
