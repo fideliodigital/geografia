@@ -327,6 +327,11 @@ quita la transparencia del menu*/
   display: none;
 }
 
+#colombia #titulo
+{
+  margin-bottom: 10%;
+}
+
 
 /*****************************************/
 /* METODOS PAGO    */
