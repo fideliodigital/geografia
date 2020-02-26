@@ -57,6 +57,48 @@ font-weight: bold;
   max-width: initial;
 }
 
+/* para cualquier etiqueta que necesita ajustarse */
+.centrar 
+{
+  text-align: center;
+}
+
+/* le da un borde gris a todas las graficas y baja un poco su titulo */
+svg.main-svg 
+{
+  box-shadow: 0 0 9px 1px #CECDD2;
+  padding-top: 15px;
+}
+
+
+
+/*Crea el formato para poner la lista de contenido  (nav) en el contenedor*/
+ #contenido ul
+ {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+}
+
+/*Cada uno de los titulos de contenido (nav) en el contenedor*/
+ #contenido ul li a 
+ {
+  margin: 6px;
+  color: #C4D520;
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+
+/* Da el color y el grosor del título "Contenido", que para que el nav funcione viene como h1*/
+#contenido h1
+{
+  font-size: 35px;
+  color: #757575;
+  text-align: center;
+}
 .ocultarEnDesktop
   {
     display:none !important;
@@ -66,6 +108,14 @@ font-weight: bold;
   display:block !important;
 }
 
+
+/* le da espacio a los lados a todos los contenidos del cuerp de la página
+no se le pone al body pq descuadra el header */
+.section
+{
+  padding: 0 50px;
+  color: #757575;
+}
 
 @media (max-width: 768px)
   {
@@ -251,17 +301,6 @@ margin-right: 215px;
   }
 }
 
-/*****************************************/
-/* CUERPO    */
-/*****************************************/
-
-/* le da espacio a los lados a todos los contenidos del cuerp de la página
-no se le pone al body pq descuadra el header */
-.section
-{
-  padding: 0 50px;
-  color: #757575;
-}
 
 /*****************************************/
 /* Inicio    */
@@ -320,11 +359,6 @@ quita la transparencia del menu*/
     border-bottom: none;
     box-shadow: 0px 40px 0px -39px white;
     opacity: 1;
-}
-
-#por-qué-importan-las-transacciones 
-{
-/* margin-top: 600px; */
 }
 
 
@@ -409,35 +443,12 @@ background-image: url('img/logoPayuVerde.png');
   width: 30%;  
   height: 200px;  
   background-color: #FFFFFF;
-  border: 1px solid #ecebef;
+  box-shadow: 0 0 9px 1px #CECDD2;
   border-radius: 20px;
   margin: 8px;
   padding: 20px
 }
 
-/* Da el color y el grosor del título "Contenido"*/
-#metodosPago #contenido h3{
-  font-weight: bolder;
-  color: #757575
-}
-
-/*Crea el formato para poner la lista de contenido en el contenedor*/
-#metodosPago #contenido h3+ul, #Departamentos #contenido h3+ol{
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-}
-
-/*Cada uno de los titulos de contenido en el contenedor*/
-#metodosPago #contenido h3+ul li, #Departamentos #contenido h3+ol li {
-  width: 30%;   
-  margin: 8px;
-  color: #C4D520;
-  text-decoration: underline;
-  justify-content: center;
-  padding: 20px;
-  font-size: 20px;
-}
 
 /* Borde gráficas cuando haya columnas*/
 #metodosPago .columna{
@@ -446,7 +457,7 @@ background-image: url('img/logoPayuVerde.png');
 }
 
 /**************************************/
-/*DEPARTAMENTOS*/
+/*departamentos*/
 /***************************************/
 
 #departamentos #header
