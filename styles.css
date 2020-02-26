@@ -437,3 +437,21 @@ background-image: url('img/logoPayuVerde.png');
   padding: 0 50px;
   color: #757575;
 }
+
+/**************************************/
+/*Industrias*/
+/***************************************/
+
+#industrias #header{
+  color: white;
+  background-image: url('img/Geografia-pagos-bg3.jpg');
+  min-height: 50vh;
+  margin-top: 70px;
+}
+
+#industrias p
+{
+  color: #757575;
+  padding: 0 50px;
+  text-align: justify;
+}
