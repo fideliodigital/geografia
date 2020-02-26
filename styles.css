@@ -152,6 +152,13 @@ no se le pone al body pq descuadra el header */
         width: auto;
         padding-left: calc(50% - 60px);
     }
+
+      .copyright
+    {
+      text-align: center;
+      padding: 0;
+    }
+
   }
 /*****************************************/
 /* MENÚ    */
@@ -467,6 +474,10 @@ quita la transparencia del menu*/
     min-height: auto;
     }
 
+    #inicio div#por-qué-importan-las-transacciones 
+    {
+      padding: 0 30px;
+   }
    
 
 }
