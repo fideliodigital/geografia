@@ -452,11 +452,6 @@ quita la transparencia del menu*/
     box-shadow: 0px 40px 0px -39px white;
     opacity: 1;
 }
-
-#inicio div#por-qué-importan-las-transacciones 
-    {
-      padding: 0 170px;
-   }
 @media (max-width: 768px)
 {
     /*formatea el texto del header dentro de la imagen*/
