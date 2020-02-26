@@ -244,6 +244,30 @@ no se le pone al body pq descuadra el header */
   color: #757575;
 }
 
+/* Le da el color y la negrilla al título de contenido*/
+#contenido h3{
+  font-weight: bolder;
+  color: #757575
+}
+
+/*Determina la organización de los elementos de la lista en un flexbox*/
+#contenido h3+ul{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+/*Cada uno de los titulos de contenido en el flexbox*/
+#contenido h3+ul li{
+  width: 30%;   
+  margin: 8px;
+  color: #C4D520;
+  text-decoration: underline;
+  justify-content: center;
+  padding: 20px;
+  font-size: 20px;
+}
+
 /*****************************************/
 /* Inicio    */
 /*****************************************/
@@ -334,7 +358,7 @@ quita la transparencia del menu*/
 /*******HEADER¨***********/
 
 /*le pone un fondo de imagen al header en metodos de pago y le ajusta el tamaño*/
-#MetodosPago #header
+#metodospago #header
 {
   color: white;
   background-image: url(../img/Geografia-pagos-bg3.jpg);
@@ -342,7 +366,7 @@ quita la transparencia del menu*/
 }
 
 /*Imagen gris en navbar de metodos de pago*/
-#MetodosPago .navbar
+#metodospago .navbar
 {
   /* background-image: url(../img/Geografia-pagos-bg3.jpg); */
 }
@@ -351,38 +375,38 @@ quita la transparencia del menu*/
 
 
 /*Agrega el logo verde de payu a la barra superrior*/
-#MetodosPago a.navbar-brand:after 
+#metodospago a.navbar-brand:after 
 
 {
 background-image: url('../img/logoPayuVerde.png');
 }
 
 /*centra el texto del header dentro de la imagen*/
-#MetodosPago #header h1 
+#metodospago #header h1 
 {
-
   margin-top: 200px;
 }
 
-#MetodosPago p
+#metodospago p
 {
   color: #757575;
   padding: 0 50px
 }
 
-#MetodosPago p+ul {
+#metodospago p+ul {
   display: flex;
   justify-content: space-between;
   list-style: none;
 }
 
-#MetodosPago p+ul li {
+#metodospago p+ul li {
   width: 30%;  
   height: 100px;  
   background-color: #FFFFFF;
   border: 1px solid #ecebef;
   border-radius: 10px;
   margin: 8px;
+  padding: 20px
 }
 
 
@@ -418,4 +442,30 @@ background-image: url('../img/logoPayuVerde.png');
   color: #757575;
   padding: 0 50px;
   text-align: justify;
+}
+
+
+#industrias #hallazgos-clave ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+@media (max-width: 768px)
+{
+  #industrias #hallazgos-clave ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    flex-direction: column;
+  }
+}
+
+#industrias #hallazgos-clave ul li { 
+  height: 120px;  
+  background-color: #FFFFFF;
+  border: 1px solid #ecebef;
+  border-radius: 10px;
+  margin: 8px;
+  padding: 20px;
 }
