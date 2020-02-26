@@ -93,7 +93,7 @@ svg.main-svg
 
 
 /* Da el color y el grosor del título "Contenido", que para que el nav funcione viene como h1*/
-#contenido h1
+#contenido h2
 {
   font-size: 35px;
   color: #757575;
@@ -140,11 +140,11 @@ svg.main-svg
 
 /* le da espacio a los lados a todos los contenidos del cuerp de la página
 no se le pone al body pq descuadra el header */
-.section
+/*.section
 {
   padding: 0 50px;
   color: #757575;
-}
+}*/
 
 @media (max-width: 768px)
   {
@@ -160,11 +160,6 @@ no se le pone al body pq descuadra el header */
       h2
       {
         text-align: center;
-      }
-
-      #contenido ul
-      {
-        display: block;
       }
   }
 /*****************************************/
@@ -377,6 +372,27 @@ margin-right: 215px;
   padding: 20px;
   font-size: 20px;
 }
+@media (max-width: 768px)
+{
+  #contenido h1+ul, #contenido h2+ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    flex-direction: column;
+  }
+
+  #contenido h1+ul li, #contenido h2+ul li{
+    width: 100%;   
+    margin: 8px;
+    height: auto;
+    color: #C4D520;
+    text-decoration: underline;
+    justify-content: center;
+    padding: 0;
+    font-size: 20px;
+  }
+}
+
 
 
 
@@ -467,6 +483,10 @@ quita la transparencia del menu*/
 /*****************************************/
 /* COLOMBIA    */
 /*****************************************/
+#colombia {
+  padding: 0 50px;
+}
+
 #colombia #header
 {
   background-image: url('img/fondoColombia.jpg');
@@ -474,8 +494,6 @@ quita la transparencia del menu*/
   
   position: absolute;
 }
-
-
 
 #colombia #header h1
 {
@@ -509,9 +527,6 @@ quita la transparencia del menu*/
   /* background-image: url(img/Geografia-pagos-bg3.jpg); */
 }
 
-
-
-
 /*Agrega el logo verde de payu a la barra superrior*/
 
 #metodosPago a.navbar-brand:after 
@@ -526,16 +541,17 @@ background-image: url('img/logoPayuVerde.png');
   margin-top: 200px;
 }
 
-
+#metodosPago
+{
+  padding: 0 50px;
+}
 
 /*Acomoda el texto que sea parrafo de manera justificada y centrada respecto a la página*/
 #metodosPago p
 {
   color: #757575;
-  padding: 0 50px;
   text-align: justify;
 }
-
 
 /*Crea el display para hacer los recuadros de información en métodos de pago*/
 #metodosPago p+p+ul {
@@ -547,7 +563,7 @@ background-image: url('img/logoPayuVerde.png');
 /*Cada uno de los recuadros de información de métodos de pago*/
 #metodosPago p+p+ul li {
   width: 30%;
-  height: 150px;  
+  height: 250px;  
   background-color: #FFFFFF;
   box-shadow: 0 0 9px 1px #CECDD2;
   border-radius: 20px;
@@ -565,13 +581,12 @@ background-image: url('img/logoPayuVerde.png');
     flex-direction: column;
   }
   #metodosPago p+p+ul li {
-    width: 100%;
-    height: 150px;  
+    width: auto;
+    height: auto;  
     background-color: #FFFFFF;
     border: 1px solid #ecebef;
     border-radius: 20px;
     margin: 8px;
-    padding: 20px
   }
 }
 
@@ -582,27 +597,13 @@ background-image: url('img/logoPayuVerde.png');
   border-radius: 20px;
 }
 
-
-@media (max-width: 768px)
-  {
-    #metodosPago p+p+ul
-    {
-      display: block;
-    }
-
-    #metodosPago p+p+ul li 
-    {
-      width: auto;
-    }
-
-    #metodosPago p
-    {
-      padding: 0;
-    }
-  }
 /**************************************/
 /*departamentos*/
 /***************************************/
+
+#departamentos{
+  padding: 0 50px;
+}
 
 #departamentos #header
 {
@@ -621,6 +622,10 @@ background-image: url('img/logoPayuVerde.png');
 /*Industrias*/
 /***************************************/
 
+#industrias{  
+  padding: 0 50px;
+}
+
 #industrias #header{
   color: white;
   background-image: url('img/Geografia-pagos-bg3.jpg');
@@ -631,7 +636,6 @@ background-image: url('img/logoPayuVerde.png');
 #industrias p
 {
   color: #757575;
-  padding: 0 50px;
   text-align: justify;
 }
 
@@ -649,14 +653,38 @@ background-image: url('img/logoPayuVerde.png');
     justify-content: space-between;
     list-style: none;
     flex-direction: column;
+    padding: 0 10px;
+  }
+
+  #industrias #hallazgos-clave ul li{
+    width: auto;
+    height: auto;
+    position: relative;
+    overflow: hidden;
   }
 }
 
 #industrias #hallazgos-clave ul li { 
-  height: 120px;  
+  height: 180px;  
   background-color: #FFFFFF;
   border: 1px solid #ecebef;
   border-radius: 10px;
   margin: 8px;
   padding: 20px;
+}
+
+/**********************************/
+/*GUIA*/
+/**********************************/
+
+#guia{
+  padding: 0 50px;
+}
+
+#guia #header
+{
+  color: white;
+  background-image: url('img/Geografia-pagos-bg3.jpg');
+  min-height: 50vh;
+  margin-top: 70px;
 }
