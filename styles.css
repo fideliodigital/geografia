@@ -57,8 +57,27 @@ font-weight: bold;
   max-width: initial;
 }
 
+.ocultarEnDesktop
+  {
+    display:none !important;
+  }
+  .ocultarEnMovil
+{
+  display:block !important;
+}
 
 
+@media (max-width: 768px)
+  {
+    .ocultarEnDesktop
+      {
+        display:block !important; 
+      }
+      .ocultarEnMovil
+      {
+        display:none !important;
+      }
+  }
 /*****************************************/
 /* MENÚ    */
 /*****************************************/
