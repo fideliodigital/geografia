@@ -364,6 +364,7 @@ background-image: url('../img/logoPayuVerde.png');
   margin-top: 200px;
 }
 
+/*Acomoda el texto que sea parrafo de manera justificada y centrada respecto a la página*/
 #MetodosPago p
 {
   color: #757575;
@@ -371,12 +372,14 @@ background-image: url('../img/logoPayuVerde.png');
   text-align: justify;
 }
 
+/*Crea el display para hacer los recuadros de información en métodos de pago*/
 #MetodosPago p+p+ul {
   display: flex;
   justify-content: space-between;
   list-style: none;
 }
 
+/*Cada uno de los recuadros de información de métodos de pago*/
 #MetodosPago p+p+ul li {
   width: 30%;  
   height: 200px;  
@@ -387,18 +390,21 @@ background-image: url('../img/logoPayuVerde.png');
   padding: 20px
 }
 
+/* Da el color y el grosor del título "Contenido"*/
 #MetodosPago #contenido h3{
   font-weight: bolder;
   color: #757575
 }
 
-#MetodosPago #contenido h3+ul{
+/*Crea el formato para poner la lista de contenido en el contenedor*/
+#MetodosPago #contenido h3+ul, #Departamentos #contenido h3+ol{
   display: flex;
   justify-content: space-between;
   list-style: none;
 }
 
-#MetodosPago #contenido h3+ul li {
+/*Cada uno de los titulos de contenido en el contenedor*/
+#MetodosPago #contenido h3+ul li, #Departamentos #contenido h3+ol li {
   width: 30%;   
   margin: 8px;
   color: #C4D520;
@@ -408,7 +414,25 @@ background-image: url('../img/logoPayuVerde.png');
   font-size: 20px;
 }
 
+/* Borde gráficas cuando haya columnas*/
 #MetodosPago .columna{
   border: 5px solid #D4D4D6;
   border-radius: 20px;
+}
+
+/**************************************/
+/*DEPARTAMENTOS*/
+/***************************************/
+
+#Departamentos #header
+{
+  color: white;
+  background-image: url(../img/Geografia-pagos-bg2.jpg);
+  min-height: 50vh;
+  margin-top: 70px;
+}
+
+#Departamentos #resumen{
+  padding: 0 50px;
+  color: #757575;
 }
