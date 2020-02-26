@@ -1,9 +1,386 @@
-blockquote {
-  font-style: italic
+/*este css ajusta la vista del html producido por R markdown*/
+
+
+
+/*****************************************/
+/* FUENTES    */
+/*****************************************/
+
+@font-face {
+  font-family: "AmpleSoft Bold";
+  src: url("https://e-commerce.payulatam.com/hubfs/Storage/Font/AmpleSoft%20Bold.otf");
 }
 
-h1, h2, h3, h4, h5, p, li, text
+@font-face {
+  font-family: "AmpleSoft";
+  src: url("https://e-commerce.payulatam.com/hubfs/Storage/Font/AmpleSoft.otf");
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+/*****************************************/
+/* ESTILOS GENERALES    */
+/*****************************************/
+
+body
 {
-    font-family:'Open Sans';
+font-family: "AmpleSoft" !important;
+background-color: #F8F7FC;
 }
 
+h1
+{
+  font-family: "AmpleSoft" !important;
+  color: black;
+  font-size: 50px;
+}
+h2
+{
+  font-size: 26px;
+  color: #333333;
+  font-family: "AmpleSoft";
+
+}
+h3,h4,h5,h6
+{
+
+text-align: center;
+font-family: "AmpleSoft";
+font-weight: bold;
+}
+
+/* AJusta el contenedor general para que no haya bordes ni espacios */
+.container-fluid.main-container {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: initial;
+}
+
+
+
+/*****************************************/
+/* MENÚ    */
+/*****************************************/
+
+
+
+
+/*pone la barra de navegacion como transparente*/
+/*Le da un espacio arriba a la barra (diseño)*/
+#navbar.navbar-collapse 
+{
+    background: transparent;
+    padding-top: 45px;
+    padding-bottom: 25px;
+}
+
+/*pone la barra de navegacion como transparente*/
+/* agrega el fondo fijo a la barra */
+.navbar 
+{
+  background: transparent;
+  position: fixed;
+  min-width: 100vw;
+  background-color: white;
+  background-size: cover;
+
+}
+
+/*subraya la seccion activa del doc en la barra de navegacion*/
+li.active 
+{
+/* border-bottom: 1px solid black; */
+text-decoration: underline;
+}
+
+
+/*Agrega el logo de payu a la barra superrior*/
+a.navbar-brand:after 
+{
+content: "";
+color: transparent;
+background-image: url('../img/logoPayuVerde.png');
+background-blend-mode: luminosity;
+background-repeat: no-repeat;
+background-color: transparent;
+min-height: 104px;
+min-width: 205px;
+top: 10px;
+left: 78px;
+position: absolute;
+z-index: 1000;
+}
+
+
+
+
+/*texto en blanco en el header*/
+.navbar-default .navbar-nav>li>a, 
+.navbar.navbar-default .navbar-nav>.active>a
+{
+color: #C4D520;
+font-size: 26px;
+}
+
+
+
+
+/*Borde gris debajo del menu, va de lado a lado de la pantalla
+deja semitransparente el menu*/
+.navbar.navbar-default
+{
+  /* border-bottom: 1px solid white; */
+  border-bottom: none;
+  box-shadow: 0px 4px 4px 0px #CECDD2;
+  opacity: 0.8;
+}
+
+/*alinea el navbar a la derecha*/
+.navbar-default .container
+{
+margin-right: 215px;
+}
+
+/* ----------------------------------------------------------- */
+@media (max-width: 768px)
+{
+    /* fondo blanco solamente */
+    .navbar 
+    {
+        background-image: none;
+    }
+
+    /* quita el borde del desktop */
+    .navbar-default .container
+    {
+        margin-right: 10px;
+    }
+    /* logo payu movíl */
+    a.navbar-brand:after 
+    {
+        content: "";
+        background-image: url(../img/logoPayuVerde.png);
+        background-repeat: no-repeat;
+        width: 74px;
+        height: 37px;
+        top: 7px;
+        left: 18px;
+        background-size: cover;
+        min-width: 0;
+        min-height: 0;
+    }
+
+        /*color menu hamburguesa*/
+        .navbar-default .navbar-nav>li>a, 
+        .navbar.navbar-default .navbar-nav>.active>a
+        {
+            color: black;
+        }
+
+        /* quita el espacio de arriba del menú movil */
+        #navbar.navbar-collapse
+         {
+            padding-top: 0;
+        }
+    
+}
+
+
+
+
+/*****************************************/
+/*  HEADER    */
+/*****************************************/
+
+
+/*le pone un fondo de imagen al header y le ajusta el tamaño*/
+#header 
+{
+  text-align: center;
+  font-size: 55px;
+  left: 0;
+  margin: 0;
+  /* background-image: url(../img/fondoHeader.png); */
+
+  min-width: 100vw;
+  min-height: 100vh;
+  background-size: contain;
+  display: flex;
+  /* position: absolute; */
+  background-repeat: no-repeat;
+  /* margin-top: -51px; */
+}
+
+/* formato del texto del header */
+#header h1
+{
+  color: black; 
+  margin: auto;
+}
+
+
+@media (min-width: 1260px)
+{
+  /* cuando la pantalla es demasiado grande
+   ajusta la imagen para que no se corra */
+  #header
+  {
+    background-position: center;
+    background-size: cover;
+    min-height: 130vh;
+  }
+}
+
+/*****************************************/
+/* CUERPO    */
+/*****************************************/
+
+/* le da espacio a los lados a todos los contenidos del cuerp de la página
+no se le pone al body pq descuadra el header */
+.section
+{
+  padding: 0 50px;
+  color: #757575;
+}
+
+/*****************************************/
+/* Inicio    */
+/*****************************************/
+
+
+#inicio #header
+{
+  background-image: url(../img/Geografia-pagos-header.jpg);
+  color: white;
+  
+}
+
+/*centra el texto del header dentro de la imagen*/
+#inicio #header h1 
+{
+ color: white; 
+margin-top: 200px;
+font-size: 80px;
+
+}
+
+#inicio h1
+{
+  text-align: center;
+
+}
+
+/*texto en blanco en el header*/
+#inicio .navbar-default .navbar-nav>li>a, 
+#inicio .navbar.navbar-default .navbar-nav>.active>a
+{
+color: white;
+}
+
+/* agrega el fondo fijo a la barra */
+#inicio .navbar 
+{
+ 
+
+  background-image: url(../img/fondoHeader.png);
+  background-size: cover;
+}
+
+/*Agrega el logo de payu VERDE*/
+#inicio a.navbar-brand:after 
+{
+  background-image: url('../img/logoPayu.png');
+}
+
+/*linea blancla debajo del navbar. Va casi de lado a lado de la pantalla
+quita la transparencia del menu*/
+#inicio .navbar.navbar-default
+{
+    /* border-bottom: 1px solid white; */
+    border-bottom: none;
+    box-shadow: 0px 40px 0px -39px white;
+    opacity: 1;
+}
+
+#por-qué-importan-las-transacciones 
+{
+/* margin-top: 600px; */
+}
+
+
+/*****************************************/
+/* COLOMBIA    */
+/*****************************************/
+#colombia #header
+{
+  background-image: url(../img/fondoColombia.jpg);
+  background-size: auto;
+  
+  position: absolute;
+}
+
+#colombia #header h1
+{
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 160px;
+}
+
+/*****************************************/
+/* METODOS PAGO    */
+/*****************************************/
+
+/*******HEADER¨***********/
+
+/*le pone un fondo de imagen al header en metodos de pago y le ajusta el tamaño*/
+#MetodosPago #header
+{
+  color: white;
+  background-image: url(../img/Geografia-pagos-bg3.jpg);
+  min-height: 50vh;
+}
+
+/*Imagen gris en navbar de metodos de pago*/
+#MetodosPago .navbar
+{
+  /* background-image: url(../img/Geografia-pagos-bg3.jpg); */
+}
+
+
+
+
+/*Agrega el logo verde de payu a la barra superrior*/
+#MetodosPago a.navbar-brand:after 
+
+{
+background-image: url('../img/logoPayuVerde.png');
+}
+
+/*centra el texto del header dentro de la imagen*/
+#MetodosPago #header h1 
+{
+
+  margin-top: 200px;
+}
+
+#MetodosPago p
+{
+  color: #757575;
+  padding: 0 50px
+}
+
+#MetodosPago p+ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+#MetodosPago p+ul li {
+  width: 30%;  
+  height: 100px;  
+  background-color: #FFFFFF;
+  border: 1px solid #ecebef;
+  border-radius: 10px;
+  margin: 8px;
+}
