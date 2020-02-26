@@ -99,6 +99,14 @@ svg.main-svg
   color: #757575;
   text-align: center;
 }
+/* el texto del copyrght al final de todas las páginas */
+.copyright
+{
+  margin-top: 25px;
+    font-size: 10px;
+    padding-left: 50px;
+    opacity: 0.4;
+}
 .ocultarEnDesktop
   {
     display:none !important;
@@ -167,18 +175,19 @@ text-decoration: underline;
 /*Agrega el logo de payu a la barra superrior*/
 a.navbar-brand:after 
 {
-content: "";
-color: transparent;
-background-image: url('img/logoPayuVerde.png');
-background-blend-mode: luminosity;
-background-repeat: no-repeat;
-background-color: transparent;
-min-height: 104px;
-min-width: 205px;
-top: 10px;
-left: 78px;
-position: absolute;
-z-index: 1000;
+  content: "";
+  color: transparent;
+  background-image: url(img/logoPayuVerde.png);
+  background-blend-mode: luminosity;
+  background-repeat: no-repeat;
+  /* background-color: transparent; */
+  min-height: 85px;
+  min-width: 139px;
+  background-size: contain;
+  top: 28px;
+  left: 78px;
+  position: absolute;
+  z-index: 1000;
 }
 
 
@@ -274,7 +283,7 @@ margin-right: 215px;
 
   min-width: 100vw;
   min-height: 100vh;
-  background-size: contain;
+  background-size: cover;
   display: flex;
   /* position: absolute; */
   background-repeat: no-repeat;
@@ -408,13 +417,6 @@ quita la transparencia del menu*/
 
 
 
-
-/*Agrega el logo verde de payu a la barra superrior*/
-#metodosPago a.navbar-brand:after 
-
-{
-background-image: url('img/logoPayuVerde.png');
-}
 
 /*centra el texto del header dentro de la imagen*/
 #metodosPago #header h1 
