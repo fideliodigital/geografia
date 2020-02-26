@@ -93,7 +93,7 @@ svg.main-svg
 
 
 /* Da el color y el grosor del título "Contenido", que para que el nav funcione viene como h1*/
-#contenido h2
+#contenido > h2, #contenido > h1
 {
   font-size: 35px;
   color: #757575;
@@ -145,6 +145,13 @@ no se le pone al body pq descuadra el header */
       {
         display: block;
       }
+
+      /* hace que las imagenes de 1 columna en movil salgan a tamaño original y centradas */
+      .col-md-1 img 
+      {
+        width: auto;
+        padding-left: calc(50% - 60px);
+    }
   }
 /*****************************************/
 /* MENÚ    */
@@ -587,6 +594,7 @@ background-image: url('img/logoPayuVerde.png');
     #metodosPago p+p+ul
     {
       display: block;
+      padding: 0;
     }
 
     #metodosPago p+p+ul li 
@@ -598,6 +606,15 @@ background-image: url('img/logoPayuVerde.png');
     {
       padding: 0;
     }
+
+ 
+    /* corrige el padding del header para que no se mueva a la derecha*/
+    #metodosPago #header
+    {
+      margin-left: -50px;
+
+    }
+
   }
 /**************************************/
 /*departamentos*/
@@ -620,6 +637,16 @@ background-image: url('img/logoPayuVerde.png');
   color: #757575;
 }
 
+
+@media (max-width: 768px)
+{
+  /* corrige el padding del header para que no se mueva a la derecha*/
+  #departamentos #header
+  {
+    margin-left: -50px;
+
+  }
+}
 /**************************************/
 /*Industrias*/
 /***************************************/
@@ -664,6 +691,13 @@ background-image: url('img/logoPayuVerde.png');
     position: relative;
     overflow: hidden;
   }
+
+   /* corrige el padding del header para que no se mueva a la derecha*/
+   #industrias #header
+   {
+     margin-left: -50px;
+
+   }
 }
 
 #industrias #hallazgos-clave ul li { 
@@ -683,10 +717,21 @@ background-image: url('img/logoPayuVerde.png');
   padding: 0 50px;
 }
 
+
 #guia #header
 {
   color: white;
   background-image: url('img/Geografia-pagos-bg3.jpg');
   min-height: 50vh;
   margin-top: 70px;
+}
+
+@media (max-width: 768px)
+{
+/* corrige el padding del header para que no se mueva a la derecha*/
+  #guia #header
+  {
+    margin-left: -50px;
+
+  }
 }
