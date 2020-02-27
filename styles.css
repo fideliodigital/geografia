@@ -72,6 +72,33 @@ svg.main-svg
 
 
 
+/*Crea el formato para poner la lista de contenido  (nav) en el contenedor*/
+ #contenido ul
+ {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+}
+
+/*Cada uno de los titulos de contenido (nav) en el contenedor*/
+ #contenido ul li a 
+ {
+  margin: 6px;
+  color: #C4D520;
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+
+/* Da el color y el grosor del título "Contenido", que para que el nav funcione viene como h1*/
+#contenido > h2, #contenido > h1
+{
+  font-size: 35px;
+  color: #757575;
+  text-align: center;
+}
 /* el texto del copyrght al final de todas las páginas */
 .copyright
 {
@@ -220,7 +247,7 @@ deja semitransparente el menu*/
 /*alinea el navbar a la derecha*/
 .navbar-default .container
 {
-margin-right: 25px;
+margin-right: 215px;
 }
 
 /* ----------------------------------------------------------- */
@@ -314,8 +341,6 @@ margin-right: 25px;
   /* position: absolute; */
   background-repeat: no-repeat;
   /* margin-top: -51px; */
-
-  margin-left: -70px;
 }
 
 /* formato del texto del header */
@@ -356,10 +381,6 @@ margin-right: 25px;
 
 }
 
-/*****************************************/
-/*  SUBHEADER CONTENIDO    */
-/*****************************************/
-
 /* Le da el color y la negrilla al título de contenido*/
 #contenido h1{
   font-weight: bolder;
@@ -376,49 +397,13 @@ margin-right: 25px;
 
 /*Cada uno de los titulos de contenido en el flexbox*/
 #contenido h1+ul li{
-  margin: 7px auto;
-  font-size: 20px;
-}
-
-/*el subheader de contenido*/
-#contenido ul
-{
- display: flex;
- justify-content: space-between;
- list-style: none;
- position: absolute;
- top: 125px;
- background-color: white;
- width: 100%;
- margin-left: -47px;
- padding: 0 10%;
- box-shadow: 0px 4px 4px 0px #CECDD2;
- padding-top: 10px;
- padding-bottom: 15px;
-}
-
-/*Cada uno de los titulos de contenido (nav) en el contenedor*/
-#contenido ul li a 
-{
-  color: #363636;
-  font-size: 20px;
-}
-
-
-/* Da el color y el grosor del título "Contenido", que para que el nav funcione viene como h1*/
-#contenido > h2, #contenido > h1
-{
- font-size: 35px;
- color: #757575;
- text-align: center;
-}
-/* da formato al link áctivo */
-#contenido .nav-tabs li.active a,
-#contenido .nav-tabs li a:hover
- {
+  width: 30%;   
+  margin: 8px;
   color: #C4D520;
-  border: none;
-  background: none;
+  text-decoration: underline;
+  justify-content: center;
+  padding: 20px;
+  font-size: 20px;
 }
 @media (max-width: 768px)
 {
@@ -463,6 +448,7 @@ margin-right: 25px;
 {
  color: white; 
  margin-top: 200px;
+  font-size: 75px;
 }
 
 #inicio h1
@@ -631,6 +617,7 @@ quita la transparencia del menu*/
   color: white;
   background-image: url('img/Geografia-pagos-bg3.jpg');
   min-height: 50vh;
+  margin-left: -50px;
 }
 
 
@@ -778,6 +765,7 @@ quita la transparencia del menu*/
   background-image: url('img/Geografia-pagos-bg3.jpg');
   min-height: 30vh;
   margin-top: 100px;
+  margin-left: -50px;
 }
 
 #industrias p
