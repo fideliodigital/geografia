@@ -164,9 +164,6 @@ no se le pone al body pq descuadra el header */
 /* MENÚ    */
 /*****************************************/
 
-
-
-
 /*pone la barra de navegacion como transparente*/
 /*Le da un espacio arriba a la barra (diseño)*/
 #navbar.navbar-collapse 
@@ -191,8 +188,9 @@ no se le pone al body pq descuadra el header */
 /*subraya la seccion activa del doc en la barra de navegacion*/
 li.active 
 {
-/* border-bottom: 1px solid black; */
-text-decoration: underline;
+  /* border-bottom: 1px solid black; */
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 
@@ -214,9 +212,6 @@ a.navbar-brand:after
   z-index: 1000;
 }
 
-
-
-
 /*texto en blanco en el header*/
 .navbar-default .navbar-nav>li>a, 
 .navbar.navbar-default .navbar-nav>.active>a
@@ -224,10 +219,6 @@ a.navbar-brand:after
 color: #C4D520;
 font-size: 26px;
 }
-
-
-
-
 /*Borde gris debajo del menu, va de lado a lado de la pantalla
 deja semitransparente el menu*/
 .navbar.navbar-default
@@ -299,10 +290,10 @@ margin-right: 215px;
 /*le pone un fondo de imagen al header y le ajusta el tamaño*/
 #header 
 {
-  text-align: center;
+  justify-content: center;
   font-size: 55px;
   left: 0;
-  margin: 0;
+  margin-top: 0;
   /* background-image: url(img/fondoHeader.png); */
 
   min-width: 100vw;
@@ -318,7 +309,7 @@ margin-right: 215px;
 #header h1
 {
   color: black; 
-  margin: auto;
+  font-size: 75px;
 }
 
 
@@ -341,6 +332,12 @@ margin-right: 215px;
     {
       background-size: contain;
       /* min-height: auto; */
+    }
+
+    #header h1{
+      font-size: 50px;
+      font-weight: bold;
+
     }
     
 
@@ -403,6 +400,7 @@ margin-right: 215px;
 {
   background-image: url('img/Geografia-pagos-header.jpg');
   color: white;
+  margin-top: -100px;
   
 }
 
@@ -410,15 +408,14 @@ margin-right: 215px;
 #inicio #header h1 
 {
  color: white; 
-margin-top: 200px;
-font-size: 80px;
-
+ margin-top: 200px;
+  font-size: 75px;
 }
 
 #inicio h1
 {
   text-align: center;
-
+  font-size: 45px;
 }
 
 /*texto en blanco en el header*/
@@ -431,8 +428,6 @@ color: white;
 /* agrega el fondo fijo a la barra */
 #inicio .navbar 
 {
- 
-
   background-image: url('img/fondoHeader.png');
   background-size: cover;
 }
@@ -455,16 +450,21 @@ quita la transparencia del menu*/
 
 #inicio div#por-qué-importan-las-transacciones 
     {
+      margin-top: -150px;
       padding: 0 170px;
    }
    
+#inicio p
+{
+  font-size: 16px;
+}
 @media (max-width: 768px)
 {
     /*formatea el texto del header dentro de la imagen*/
     #inicio #header h1 
     {
       margin-top: 24px;
-      font-size: 30px;
+      font-size: 50px;
       height: 250px;
     }
 
@@ -476,13 +476,19 @@ quita la transparencia del menu*/
 
     #inicio #header
     {
-      background-size: contain;
+      background-size: 100%;
     min-height: auto;
+    margin: 0
     }
 
     #inicio div#por-qué-importan-las-transacciones 
     {
+      margin-top: 20px;
       padding: 0 30px;
+   }
+
+   #inicio p{
+     margin-top: -10px;
    }
    
 
@@ -513,6 +519,52 @@ quita la transparencia del menu*/
   margin-bottom: 10%;
 }
 
+#colombia p
+{
+  font-size: 16px;
+  margin-top: -10px
+}
+
+#colombia #cuántas-personas-viven-en-el-país, #qué-tan-grande-es-el-territorio
+{
+  text-align: left;
+}
+
+#colombia p+img{
+  height: 100px;
+}
+
+#colombia #un-mercado-en-progreso{
+  margin-top: -20px;
+}
+
+#colombia .row .col-md-4 p img{
+  margin-top: 200px;
+}
+
+@media (max-width: 768px)
+{
+  #colombia .row .col-md-4 p img{
+    margin: 10px;
+  } 
+
+  #colombia .ocultarEnDesktop h1{
+    font-weight: bold;
+  }
+
+  #colombia #header{
+    background-size: contain;
+  }
+
+  #colombia #contexto-de-país{
+    margin-top: -80px;
+  }
+
+  #colombia p{
+    margin-top: -15px;
+  }
+}
+
 
 /*****************************************/
 /* METODOS PAGO    */
@@ -526,6 +578,7 @@ quita la transparencia del menu*/
   color: white;
   background-image: url('img/Geografia-pagos-bg3.jpg');
   min-height: 50vh;
+  margin-left: -50px;
 }
 
 /*Imagen gris en navbar de metodos de pago*/
@@ -596,6 +649,10 @@ background-image: url('img/logoPayuVerde.png');
     border-radius: 20px;
     margin: 8px;
   }
+
+  #metodosPago br{
+    display: none;
+  }
 }
 
 
@@ -645,8 +702,10 @@ background-image: url('img/logoPayuVerde.png');
 {
   color: white;
   background-image: url('img/Geografia-pagos-bg2.jpg');
-  min-height: 50vh;
+  background-size: 100%;
+  min-height: 30vh;
   margin-top: 70px;
+  margin-left: -50px;
 }
 
 #departamentos #resumen{
@@ -661,6 +720,7 @@ background-image: url('img/logoPayuVerde.png');
   #departamentos #header
   {
     margin-left: -50px;
+    background-size: 100%;
 
   }
 }
@@ -675,8 +735,9 @@ background-image: url('img/logoPayuVerde.png');
 #industrias #header{
   color: white;
   background-image: url('img/Geografia-pagos-bg3.jpg');
-  min-height: 50vh;
-  margin-top: 70px;
+  min-height: 30vh;
+  margin-top: 100px;
+  margin-left: -50px;
 }
 
 #industrias p
