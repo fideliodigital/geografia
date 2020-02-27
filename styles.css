@@ -151,12 +151,27 @@ no se le pone al body pq descuadra el header */
       {
         width: auto;
         padding-left: calc(50% - 60px);
-    }
+      }
+
+      /* Hace que las imagenes de Colombia que van en dos columnas salgan dimensionadas correctamente */
+      .col-md-1.col-xs-3 
+      {
+        padding: 0;
+        padding-top: 30px;
+      }
 
       .copyright
     {
       text-align: center;
       padding: 0;
+    }
+    /* a las filas  con esta propiedad se les ajusta el borde para que abarque toda la pantalla */
+    .fondoGrisMovil
+    {
+      background-color: #F4F5F6;
+      margin: 0 -50px;
+      margin-bottom: 25px;
+      padding: 35px;
     }
 
   }
@@ -177,7 +192,7 @@ no se le pone al body pq descuadra el header */
 /* agrega el fondo fijo a la barra */
 .navbar 
 {
-  background: transparent;
+  background: url('img/Geografia-pagos-menu-internas.jpg');
   position: fixed;
   min-width: 100vw;
   background-color: white;
@@ -194,12 +209,12 @@ li.active
 }
 
 
-/*Agrega el logo de payu a la barra superrior*/
+/*Agrega el logo de payu blanco a la barra superrior*/
 a.navbar-brand:after 
 {
   content: "";
   color: transparent;
-  background-image: url(img/logoPayuVerde.png);
+  background-image: url(img/logoPayu.png);
   background-blend-mode: luminosity;
   background-repeat: no-repeat;
   /* background-color: transparent; */
@@ -216,7 +231,7 @@ a.navbar-brand:after
 .navbar-default .navbar-nav>li>a, 
 .navbar.navbar-default .navbar-nav>.active>a
 {
-color: #C4D520;
+color: white;
 font-size: 26px;
 }
 /*Borde gris debajo del menu, va de lado a lado de la pantalla
@@ -239,15 +254,17 @@ margin-right: 215px;
 @media (max-width: 768px)
 {
     /* fondo blanco solamente */
-    .navbar 
+    .navbar.navbar-default, #inicio .navbar.navbar-default 
     {
         background-image: none;
+        /* opacity: 1; */
     }
 
     /* quita el borde del desktop */
     .navbar-default .container
     {
         margin-right: 10px;
+        
     }
     /* logo payu movíl */
     a.navbar-brand:after 
@@ -264,17 +281,38 @@ margin-right: 215px;
         min-height: 0;
     }
 
-        /*color menu hamburguesa*/
-        .navbar-default .navbar-nav>li>a, 
-        .navbar.navbar-default .navbar-nav>.active>a
+        /*color texto menu hamburguesa*/
+        .navbar-default .navbar-nav>li>a
         {
-            color: black;
+            color: #363636 ;
         }
+
+         /*color texto activo menu hamburguesa*/
+         .navbar.navbar-default .navbar-nav>.active>a,
+         .navbar.navbar-default .navbar-nav>li>a:hover,
+         .navbar.navbar-default .navbar-nav>li>a:focus
+         {
+             color: #A6C307 ;
+             background-color: #a6c3071f;
+         }
+ 
 
         /* quita el espacio de arriba del menú movil */
         #navbar.navbar-collapse
          {
             padding-top: 0;
+        }
+        /* color de la hamburguesa */
+        .container-fluid .navbar-default .navbar-toggle .icon-bar 
+        {
+          background-color: black;
+          height: 3px;
+        }
+
+        /* color de la hamburguesa */
+        .container-fluid .navbar-default .navbar-toggle 
+        {
+          border: none;
         }
     
 }
@@ -401,6 +439,7 @@ margin-right: 215px;
   background-image: url('img/Geografia-pagos-header.jpg');
   color: white;
   margin-top: -100px;
+  /* min-height: 130hv ; */
   
 }
 
@@ -432,11 +471,6 @@ color: white;
   background-size: cover;
 }
 
-/*Agrega el logo de payu VERDE*/
-#inicio a.navbar-brand:after 
-{
-  background-image: url('img/logoPayu.png');
-}
 
 /*linea blancla debajo del navbar. Va casi de lado a lado de la pantalla
 quita la transparencia del menu*/
@@ -464,7 +498,7 @@ quita la transparencia del menu*/
     #inicio #header h1 
     {
       margin-top: 24px;
-      font-size: 50px;
+      font-size: 27px;
       height: 250px;
     }
 
@@ -563,6 +597,11 @@ quita la transparencia del menu*/
   #colombia p{
     margin-top: -15px;
   }
+
+  #colombia 
+  {
+    padding: 0 30px;
+  }
 }
 
 
@@ -581,19 +620,8 @@ quita la transparencia del menu*/
   margin-left: -50px;
 }
 
-/*Imagen gris en navbar de metodos de pago*/
 
-#metodosPago .navbar
-{
-  /* background-image: url(img/Geografia-pagos-bg3.jpg); */
-}
 
-/*Agrega el logo verde de payu a la barra superrior*/
-
-#metodosPago a.navbar-brand:after 
-{
-background-image: url('img/logoPayuVerde.png');
-}
 
 /*centra el texto del header dentro de la imagen*/
 
