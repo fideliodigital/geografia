@@ -675,7 +675,7 @@ quita la transparencia del menu*/
 {
   color: white;
   background-image: url('img/Geografia-pagos-bg3.jpg');
-  min-height: 50vh;
+  min-height: 20vh;
   /* compensa que los tabs de contenido estan encima */
   margin-top: 100px;
 }
