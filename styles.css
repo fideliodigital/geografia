@@ -97,7 +97,12 @@ no se le pone al body pq descuadra el header */
   padding: 0 50px;
   color: #757575;
 }*/
-
+/* hace que las imagenes de 1 columna salgan a tamaño original y en movil salgan centradas */
+.col-md-1 img 
+{
+  width: auto;
+  padding-left: calc(50% - 60px);
+}
 @media (max-width: 768px)
   {
     .ocultarEnDesktop
@@ -119,12 +124,7 @@ no se le pone al body pq descuadra el header */
         display: block;
       }
 
-      /* hace que las imagenes de 1 columna en movil salgan a tamaño original y centradas */
-      .col-md-1 img 
-      {
-        width: auto;
-        padding-left: calc(50% - 60px);
-      }
+      
 
       /* Hace que las imagenes de Colombia que van en dos columnas salgan dimensionadas correctamente */
       .col-md-1.col-xs-3 
