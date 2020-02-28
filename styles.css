@@ -370,15 +370,9 @@ margin-right: 25px;
   text-align: center;
 }
 
-/*Determina la organización de los elementos de la lista en un flexbox*/
-#contenido h1+ul{
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-}
 
 /*Cada uno de los titulos de contenido en el flexbox*/
-#contenido ul.nav-tabs li{
+#contenido > ul.nav-tabs li{
   margin: 7px auto;
   font-size: 20px;
 }
@@ -386,13 +380,13 @@ margin-right: 25px;
 
 
 /*el subheader de contenido*/
-#contenido .nav-tabs
+#contenido > .nav-tabs
 {
  display: flex;
  justify-content: space-between;
  list-style: none;
  position: fixed;
- top: 125px;
+ top: 121px;
  background-color: white;
  width: 100%;
  margin-left: -50px;
@@ -404,7 +398,7 @@ margin-right: 25px;
 }
 
 /*Cada uno de los titulos de contenido (nav) en el contenedor*/
-#contenido ul li a 
+#contenido > .nav-tabs li a 
 {
   color: #363636;
   font-size: 20px;
@@ -423,8 +417,8 @@ margin-right: 25px;
  /* text-align: center; */
 }
 /* da formato al link áctivo */
-#contenido .nav-tabs li.active a,
-#contenido .nav-tabs li a:hover
+#contenido > .nav-tabs li.active a,
+#contenido > .nav-tabs li a:hover
  {
   color: #C4D520;
   border: none;
@@ -433,7 +427,7 @@ margin-right: 25px;
 @media (max-width: 768px)
 {
 
-  #contenido ul.nav.nav-tabs 
+  #contenido > .nav-tabs.nav
   {
     top: 52px;
     width: 100%;
@@ -444,15 +438,9 @@ margin-right: 25px;
     white-space: nowrap;
     padding: 2px 0;
 }
-  #contenido h1+ul, #contenido h2+ul{
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    flex-direction: column;
-    
-  }
-
-  #contenido h1+ul li, #contenido h2+ul li{
+ 
+  #contenido > .nav-tabs.nav li
+  {
     margin: 0px;
     color: #C4D520;
     text-decoration: none;
@@ -461,7 +449,8 @@ margin-right: 25px;
     float: none;
   }
 
-  #contenido ul li a {
+  #contenido > .nav-tabs.nav li a 
+  {
     
     font-size: 11px;
     text-overflow: ellipsis;
@@ -579,7 +568,7 @@ quita la transparencia del menu*/
 {
   background-image: url('img/fondoColombia.jpg');
   background-size: auto;
-  
+  margin-left: 0;
   position: absolute;
 }
 
@@ -797,7 +786,7 @@ quita la transparencia del menu*/
   background-image: url('img/Geografia-pagos-bg2.jpg');
   background-size: 100%;
   min-height: 30vh;
-  margin-top: 165px;
+  margin-top: 160px;
   margin-left: -50px;
 }
 
@@ -829,7 +818,7 @@ quita la transparencia del menu*/
   color: white;
   background-image: url('img/Geografia-pagos-bg3.jpg');
   min-height: 30vh;
-  margin-top: 210px;
+  margin-top: 200px;
 }
 
 #industrias p
