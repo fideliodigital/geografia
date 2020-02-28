@@ -461,8 +461,34 @@ margin-right: 25px;
 }
 }
 
+/*****************************************/
+/* TABS INTERNAS (i.e Por industria, por ciudad)    */
+/*****************************************/
 
 
+/* color del titulo */
+.nav-pills a.nav-link 
+{
+  color: #1D1D1F;
+}
+
+/* color de la pestaña activa */
+.nav-pills>li.active>a, 
+.nav-pills>li.active>a:hover, 
+.nav-pills>li.active>a:focus 
+{
+  color: #ffffff;
+  background-color: #9E9E9E;
+}
+
+/* quitar el subrayado */
+nav-pills>li.active
+{
+  text-decoration: none;
+}
+@media (max-width: 768px)
+{
+}
 
 /*****************************************/
 /* Inicio    */
