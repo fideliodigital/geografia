@@ -378,7 +378,7 @@ margin-right: 25px;
 }
 
 /*Cada uno de los titulos de contenido en el flexbox*/
-#contenido h1+ul li{
+#contenido ul.nav-tabs li{
   margin: 7px auto;
   font-size: 20px;
 }
@@ -395,8 +395,8 @@ margin-right: 25px;
  top: 125px;
  background-color: white;
  width: 100%;
- margin-left: -47px;
- padding: 0 10%;
+ margin-left: -50px;
+ padding: 0 5%;
  box-shadow: 0px 4px 4px 0px #CECDD2;
  padding-top: 10px;
  padding-bottom: 15px;
@@ -435,7 +435,7 @@ margin-right: 25px;
   #contenido ul.nav.nav-tabs 
   {
     top: 54px;
-    width: auto;
+    width: 100%;
     margin: 0 -50px;
     border-top: 1px solid #CECDD2;
     overflow-x: scroll;
@@ -457,7 +457,6 @@ margin-right: 25px;
     text-decoration: none;
     padding: 0;
     display: inline-block;
-    white-space: nowrap;
     float: none;
   }
 
