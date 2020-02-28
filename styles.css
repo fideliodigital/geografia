@@ -212,7 +212,7 @@ font-size: 26px;
 {
   /* border-bottom: 1px solid white; */
   border-bottom: none;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 /*alinea el navbar a la derecha*/
@@ -400,6 +400,7 @@ margin-right: 25px;
  box-shadow: 0px 4px 4px 0px #CECDD2;
  padding-top: 10px;
  padding-bottom: 15px;
+ z-index: 100;
 }
 
 /*Cada uno de los titulos de contenido (nav) en el contenedor*/
@@ -434,7 +435,7 @@ margin-right: 25px;
 
   #contenido ul.nav.nav-tabs 
   {
-    top: 54px;
+    top: 52px;
     width: 100%;
     margin: 0 -50px;
     border-top: 1px solid #CECDD2;
