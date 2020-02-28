@@ -72,33 +72,6 @@ svg.main-svg
 
 
 
-/*Crea el formato para poner la lista de contenido  (nav) en el contenedor*/
- #contenido ul
- {
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-  margin-bottom: 20px;
-  padding-bottom: 15px;
-}
-
-/*Cada uno de los titulos de contenido (nav) en el contenedor*/
- #contenido ul li a 
- {
-  margin: 6px;
-  color: #C4D520;
-  text-decoration: underline;
-  font-size: 20px;
-}
-
-
-/* Da el color y el grosor del título "Contenido", que para que el nav funcione viene como h1*/
-#contenido > h2, #contenido > h1
-{
-  font-size: 35px;
-  color: #757575;
-  text-align: center;
-}
 /* el texto del copyrght al final de todas las páginas */
 .copyright
 {
@@ -234,20 +207,18 @@ a.navbar-brand:after
 color: white;
 font-size: 26px;
 }
-/*Borde gris debajo del menu, va de lado a lado de la pantalla
-deja semitransparente el menu*/
+/*deja semitransparente el menu*/
 .navbar.navbar-default
 {
   /* border-bottom: 1px solid white; */
   border-bottom: none;
-  box-shadow: 0px 4px 4px 0px #CECDD2;
   opacity: 0.8;
 }
 
 /*alinea el navbar a la derecha*/
 .navbar-default .container
 {
-margin-right: 215px;
+margin-right: 25px;
 }
 
 /* ----------------------------------------------------------- */
@@ -341,6 +312,8 @@ margin-right: 215px;
   /* position: absolute; */
   background-repeat: no-repeat;
   /* margin-top: -51px; */
+
+  margin-left: -70px;
 }
 
 /* formato del texto del header */
@@ -348,6 +321,8 @@ margin-right: 215px;
 {
   color: black; 
   font-size: 75px;
+  margin: auto;
+  text-align: center;
 }
 
 
@@ -372,14 +347,21 @@ margin-right: 215px;
       /* min-height: auto; */
     }
 
-    #header h1{
+    #header h1
+    {
       font-size: 50px;
       font-weight: bold;
 
     }
+
+  
     
 
 }
+
+/*****************************************/
+/*  SUBHEADER CONTENIDO    */
+/*****************************************/
 
 /* Le da el color y la negrilla al título de contenido*/
 #contenido h1{
@@ -397,33 +379,95 @@ margin-right: 215px;
 
 /*Cada uno de los titulos de contenido en el flexbox*/
 #contenido h1+ul li{
-  width: 30%;   
-  margin: 8px;
-  color: #C4D520;
-  text-decoration: underline;
-  justify-content: center;
-  padding: 20px;
+  margin: 7px auto;
   font-size: 20px;
+}
+
+
+
+/*el subheader de contenido*/
+#contenido .nav-tabs
+{
+ display: flex;
+ justify-content: space-between;
+ list-style: none;
+ position: fixed;
+ top: 125px;
+ background-color: white;
+ width: 100%;
+ margin-left: -47px;
+ padding: 0 10%;
+ box-shadow: 0px 4px 4px 0px #CECDD2;
+ padding-top: 10px;
+ padding-bottom: 15px;
+}
+
+/*Cada uno de los titulos de contenido (nav) en el contenedor*/
+#contenido ul li a 
+{
+  color: #363636;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+/* Da el color y el grosor del título "Contenido", que para que el nav funcione viene como h1*/
+/* esconde el titulo de contenido ya que queda en los tabs */
+#contenido> h1, #contenido> h2
+{
+  color:transparent;
+ font-size: 3px;
+ /* font-size: 35px; */
+ /* color: #757575; */
+ /* text-align: center; */
+}
+/* da formato al link áctivo */
+#contenido .nav-tabs li.active a,
+#contenido .nav-tabs li a:hover
+ {
+  color: #C4D520;
+  border: none;
+  background: none;
 }
 @media (max-width: 768px)
 {
+
+  #contenido ul.nav.nav-tabs {
+    top: 54px;
+    width: auto;
+    margin: 0 -50px;
+    border-top: 1px solid #CECDD2;
+    overflow-x: scroll;
+    display: block;
+    white-space: nowrap;
+}
   #contenido h1+ul, #contenido h2+ul{
     display: flex;
     justify-content: space-between;
     list-style: none;
     flex-direction: column;
+    
   }
 
   #contenido h1+ul li, #contenido h2+ul li{
-    width: 100%;   
-    margin: 8px;
-    height: auto;
+    margin: 0px;
     color: #C4D520;
-    text-decoration: underline;
-    justify-content: center;
+    text-decoration: none;
     padding: 0;
-    font-size: 20px;
+    display: inline-block;
+    white-space: nowrap;
+    float: none;
   }
+
+  #contenido ul li a {
+    
+    font-size: 10px;
+    text-overflow: ellipsis;
+    /* overflow: visible; */
+    flex-flow: nowrap;
+    word-break: break-all;
+    width: max-content;
+}
 }
 
 
@@ -448,7 +492,6 @@ margin-right: 215px;
 {
  color: white; 
  margin-top: 200px;
-  font-size: 75px;
 }
 
 #inicio h1
@@ -457,12 +500,7 @@ margin-right: 215px;
   font-size: 45px;
 }
 
-/*texto en blanco en el header*/
-#inicio .navbar-default .navbar-nav>li>a, 
-#inicio .navbar.navbar-default .navbar-nav>.active>a
-{
-color: white;
-}
+
 
 /* agrega el fondo fijo a la barra */
 #inicio .navbar 
@@ -543,9 +581,20 @@ quita la transparencia del menu*/
   position: absolute;
 }
 
+/*deja semitransparente el menu*/
+#colombia .navbar.navbar-default
+{
+  box-shadow: 0px 4px 4px 0px #CECDD2;
+}
+
 #colombia #header h1
 {
   display: none;
+}
+
+#colombia h2
+{
+  text-align: left;
 }
 
 #colombia #titulo
@@ -586,12 +635,20 @@ quita la transparencia del menu*/
     font-weight: bold;
   }
 
+  #colombia .tituloMovil
+  {
+    position: relative;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
   #colombia #header{
     background-size: contain;
+    margin-left: 0;
   }
 
   #colombia #contexto-de-país{
-    margin-top: -80px;
+    margin-top: -38px;
   }
 
   #colombia p{
@@ -617,7 +674,8 @@ quita la transparencia del menu*/
   color: white;
   background-image: url('img/Geografia-pagos-bg3.jpg');
   min-height: 50vh;
-  margin-left: -50px;
+  /* compensa que los tabs de contenido estan encima */
+  margin-top: 100px;
 }
 
 
@@ -681,6 +739,11 @@ quita la transparencia del menu*/
   #metodosPago br{
     display: none;
   }
+
+  #metodosPago #header h1
+  {
+    margin-top: 0;
+  }
 }
 
 
@@ -732,7 +795,7 @@ quita la transparencia del menu*/
   background-image: url('img/Geografia-pagos-bg2.jpg');
   background-size: 100%;
   min-height: 30vh;
-  margin-top: 70px;
+  margin-top: 165px;
   margin-left: -50px;
 }
 
@@ -749,7 +812,7 @@ quita la transparencia del menu*/
   {
     margin-left: -50px;
     background-size: 100%;
-
+    margin-top: 0;
   }
 }
 /**************************************/
@@ -764,8 +827,7 @@ quita la transparencia del menu*/
   color: white;
   background-image: url('img/Geografia-pagos-bg3.jpg');
   min-height: 30vh;
-  margin-top: 100px;
-  margin-left: -50px;
+  margin-top: 210px;
 }
 
 #industrias p
@@ -802,6 +864,7 @@ quita la transparencia del menu*/
    #industrias #header
    {
      margin-left: -50px;
+     margin-top: 0;
 
    }
 }
@@ -832,12 +895,19 @@ quita la transparencia del menu*/
   margin-top: 70px;
 }
 
+/*deja semitransparente el menu*/
+#guia .navbar.navbar-default
+{
+  box-shadow: 0px 4px 4px 0px #CECDD2;
+}
+
 @media (max-width: 768px)
 {
 /* corrige el padding del header para que no se mueva a la derecha*/
   #guia #header
   {
     margin-left: -50px;
+    margin-top: 0;
 
   }
 }
