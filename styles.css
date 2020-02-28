@@ -432,7 +432,8 @@ margin-right: 25px;
 @media (max-width: 768px)
 {
 
-  #contenido ul.nav.nav-tabs {
+  #contenido ul.nav.nav-tabs 
+  {
     top: 54px;
     width: auto;
     margin: 0 -50px;
@@ -440,6 +441,7 @@ margin-right: 25px;
     overflow-x: scroll;
     display: block;
     white-space: nowrap;
+    padding: 2px 0;
 }
   #contenido h1+ul, #contenido h2+ul{
     display: flex;
