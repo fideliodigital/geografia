@@ -725,7 +725,8 @@ quita la transparencia del menu*/
 }
 
 /*Cada uno de los recuadros de información de métodos de pago*/
-#metodosPago p+p+ul li {
+#metodosPago p+p+ul li, #industrias p+p+ul li 
+{
   width: 30%;  
   min-height: 250px;  
   background-color: #FFFFFF;
