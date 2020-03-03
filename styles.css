@@ -22,6 +22,78 @@
 /* ESTILOS GENERALES    */
 /*****************************************/
 
+@media (min-width: 1280px) and (max-width: 1919px)
+{
+  .navbar{ 
+    min-height: 100px;
+  }
+
+  .nav.nav-tabs
+  {
+    margin-top: 15px;
+    min-height: 70px;
+  }
+}
+
+@media (min-width: 1920px)
+{
+  .navbar{ 
+    min-height: 140px;
+  }
+
+  #header{
+    margin-top:-20px;
+  }
+
+  .nav.nav-tabs
+  {
+    margin-top: 15px;
+    min-height: 80px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px)
+{
+  .navbar{ 
+    height: 100px;
+  }
+
+  .nav.navbar-nav.navbar-right{
+    max-height: 50px;
+    overflow: auto;
+  }
+  .nav.navbar-nav.navbar-right>li{
+    white-space: nowrap;
+  }
+
+  #navbar{
+    padding-left: 200px;
+  }
+
+  .nav.nav-tabs
+  {
+    margin-top: -10px;
+  }
+
+  .nav.nav-tabs>li>a
+  {
+    margin-top: -10px;
+  }
+}
+
+@media (max-width: 768px)
+{
+  .navbar{ 
+    min-height: 55px;
+  }
+
+  .nav.nav-tabs
+  {
+    padding-top: 100px;
+    min-height: 35px;
+  }
+}
+
 body
 {
 font-family: "AmpleSoft" !important;
