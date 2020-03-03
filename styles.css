@@ -66,6 +66,7 @@
     white-space: nowrap;
   }
 
+
   #navbar{
     padding-left: 200px;
   }
@@ -769,9 +770,6 @@ quita la transparencia del menu*/
   margin-top: 100px;
 }
 
-
-
-
 /*centra el texto del header dentro de la imagen*/
 
 #metodosPago #header h1 
@@ -792,7 +790,7 @@ quita la transparencia del menu*/
 }
 
 /*Crea el display para hacer los recuadros de información en métodos de pago*/
-#metodosPago p+p+ul , #industrias p+p+ul 
+#metodosPago p+p+ul , #industrias p+p+ul, #departamentos p+p+ul
 {
   display: flex;
   justify-content: space-between;
@@ -800,7 +798,7 @@ quita la transparencia del menu*/
 }
 
 /*Cada uno de los recuadros de información de métodos de pago*/
-#metodosPago p+p+ul li, #industrias p+p+ul li 
+#metodosPago p+p+ul li, #industrias p+p+ul li, #departamentos p+p+ul li
 {
   width: 30%;  
   min-height: 250px;  
@@ -814,14 +812,14 @@ quita la transparencia del menu*/
 /*Adaptación a móvil*/
 @media (max-width: 768px)
 {
-  #metodosPago p+p+ul, #industrias p+p+ul {
+  #metodosPago p+p+ul, #industrias p+p+ul, #departamentos p+p+ul {
     display: flex;
     justify-content: space-between;
     list-style: none;
     flex-direction: column;
     padding-inline-start: 0%;
   }
-  #metodosPago p+p+ul li, #industrias p+p+ul li {
+  #metodosPago p+p+ul li, #industrias p+p+ul li, #departamentos p+p+ul li {
     width: auto;
     height: auto;  
     background-color: #FFFFFF;
