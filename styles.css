@@ -811,13 +811,13 @@ quita la transparencia del menu*/
 /*Adaptación a móvil*/
 @media (max-width: 768px)
 {
-  #metodosPago p+p+ul{
+  #metodosPago p+p+ul, #industrias p+p+ul {
     display: flex;
     justify-content: space-between;
     list-style: none;
     flex-direction: column;
   }
-  #metodosPago p+p+ul li {
+  #metodosPago p+p+ul li, #industrias p+p+ul li {
     width: auto;
     height: auto;  
     background-color: #FFFFFF;
@@ -935,6 +935,10 @@ quita la transparencia del menu*/
 
 @media (max-width: 768px)
 {
+  #industrias #overview{
+    margin-top: -120px;
+  }
+
   #industrias #hallazgos-clave ul {
     display: flex;
     justify-content: space-between;
