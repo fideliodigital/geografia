@@ -809,6 +809,15 @@ quita la transparencia del menu*/
   padding: 20px
 }
 
+.leaflet-bottom{
+  z-index: 10;
+}
+
+
+g{
+  font-family: "AmpleSoft"
+}
+
 /*Adaptación a móvil*/
 @media (max-width: 768px)
 {
