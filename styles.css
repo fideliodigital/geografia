@@ -136,11 +136,10 @@ font-weight: bold;
   text-align: center;
 }
 
-/* le da un borde gris a todas las graficas y baja un poco su titulo */
+/* le da un borde gris a todas las graficas */
 svg.main-svg 
 {
   box-shadow: 0 0 9px 1px #CECDD2;
-  padding-top: 15px;
 }
 
 
