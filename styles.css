@@ -808,10 +808,9 @@ quita la transparencia del menu*/
   padding: 20px
 }
 
-.leaflet-bottom{
+.leaflet-bottom, .leaflet-top{
   z-index: 10;
 }
-
 
 g{
   font-family: "AmpleSoft"
