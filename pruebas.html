@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Métodos de pago</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.9.2/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="site_libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="site_libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 52px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h2 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h3 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h4 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h5 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h6 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="index.html">Inicio</a>
+</li>
+<li>
+  <a href="colombia.html">Colombia</a>
+</li>
+<li>
+  <a href="payments.html">Métodos de pago</a>
+</li>
+<li>
+  <a href="industries.html">Industrias</a>
+</li>
+<li>
+  <a href="regions.html">Departamentos</a>
+</li>
+<li>
+  <a href="guideline.html">Guía</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+<head>
+<link rel="shortcut icon" href="http://www.payu.com.br/wp-content/uploads/2017/03/favicon.png" type="image/x-icon">
+<link rel="icon" href="http://www.payu.com.br/wp-content/uploads/2017/03/favicon.png" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148156941-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-148156941-1');
+</script>
+<script>
+$( document ).ready(function() 
+{
+ var titulo = $("#titulo").attr('class');
+ $(".main-container").attr("id",titulo);
+});
+</script>
+</head>
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Métodos de pago</h1>
+
+</div>
+
+
+<div id="tarjetas-de-crédito" class="section level2">
+<h2>Tarjetas de crédito</h2>
+<div class="row">
+<div class="col-md-4">
+<div id="htmlwidget-abe7304497452ab09d15" style="width:100%;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-abe7304497452ab09d15">{"x":{"visdat":{"33948a56a5":["function () ","plotlyVisDat"]},"cur_data":"33948a56a5","attrs":{"33948a56a5":{"labels":{},"values":{},"hole":0.5,"marker":{"colors":{}},"hovertemplate":{},"name":"","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"pie"}},"layout":{"margin":{"b":100,"l":20,"t":50,"r":0,"pad":0},"title":"TPV en 2019","font":{"family":"AmpleSoft"},"showlegend":true,"xaxis":{"showgrid":false,"automargin":false,"zeroline":false,"showticklabels":false},"yaxis":{"showgrid":false,"zeroline":false,"automargin":false,"showticklabels":false},"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false},"data":[{"labels":["Servicios de transporte","Ventas en general","Entretenimiento, turismo y ocio","Tecnología / telecomunicaciones","Educación y deportes","Moda y calzado","Servicios médicos y clínicos","Servicios financieros","Servicios especializados","Bienes del hogar","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros"],"values":[1724856679328,1101667973375,676049778107,455153439975,302249633560,230880297757,137710933947,114978562268,109191587064,85141168200,51775885074,47489261202,37364918063,31745762799,19866589403,15715274228,10383690607,3446406618,3097798690],"hole":0.5,"marker":{"color":"rgba(31,119,180,1)","colors":["#A6C307","#831F82","#46ACBC","#004852","#438F29","#48A5D9","#D7007F","#EF7D00","#FFDD00","#0956C6","#94969B","#E3E4E2","#00ADBA","#DFEF14","#555659","#951247","#470F51","#D63318","#A6C307"],"line":{"color":"rgba(255,255,255,1)"}},"hovertemplate":["Servicios de transporte","Ventas en general","Entretenimiento, turismo y ocio","Tecnología / telecomunicaciones","Educación y deportes","Moda y calzado","Servicios médicos y clínicos","Servicios financieros","Servicios especializados","Bienes del hogar","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros"],"name":"","type":"pie","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="col-md-4">
+<div id="htmlwidget-9647c5f293e17c2a2e0c" style="width:100%;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9647c5f293e17c2a2e0c">{"x":{"visdat":{"3394373329ce":["function () ","plotlyVisDat"]},"cur_data":"3394373329ce","attrs":{"3394373329ce":{"labels":{},"values":{},"hole":0.5,"marker":{"colors":{}},"hovertemplate":{},"name":"","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"pie"}},"layout":{"margin":{"b":100,"l":20,"t":50,"r":0,"pad":0},"title":"TPV en 2019","font":{"family":"AmpleSoft"},"showlegend":true,"xaxis":{"showgrid":false,"automargin":false,"zeroline":false,"showticklabels":false},"yaxis":{"showgrid":false,"zeroline":false,"automargin":false,"showticklabels":false},"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false},"data":[{"labels":["Bogotá D.C.","Antioquia","Valle Del Cauca","Santander","Atlántico","Cundinamarca","Bolívar","Risaralda","Caldas","Norte De Santander","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros"],"values":[454296896477,237975400242,108731593448,65260108550,49319497541,47351114026,34149009471,30553728554,29166373754,27685646672,25509600823,23823240356,21100532691,18871035055,16178421693,15463091772,14857250000,12993185864,12688005683,11713857624,9638661908,6255287970,6003435354,5181877529,3910609583,3487229182,3391323101,1530060445,1131472818,401306820,107064568,67545324,38142509],"hole":0.5,"marker":{"color":"rgba(31,119,180,1)","colors":["#A6C307","#831F82","#46ACBC","#004852","#438F29","#48A5D9","#D7007F","#EF7D00","#FFDD00","#0956C6","#94969B","#E3E4E2","#00ADBA","#DFEF14","#555659","#951247","#470F51","#D63318","#A6C307","#831F82","#46ACBC","#004852","#438F29","#48A5D9","#D7007F","#EF7D00","#FFDD00","#0956C6","#94969B","#E3E4E2","#00ADBA","#DFEF14","#555659"],"line":{"color":"rgba(255,255,255,1)"}},"hovertemplate":["Bogotá D.C.","Antioquia","Valle Del Cauca","Santander","Atlántico","Cundinamarca","Bolívar","Risaralda","Caldas","Norte De Santander","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros"],"name":"","type":"pie","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="col-md-4">
+<div>
+<ul class="nav nav-pills" role="tablist">
+<li class="nav-item active">
+<a class="nav-link " data-toggle="tab" href="#tarjeta-de-crédito-departamento" role="tab" aria-controls="departamento" aria-selected="true">Departamento</a>
+</li>
+<li class="nav-item">
+<a class="nav-link " data-toggle="tab" href="#tarjeta-de-crédito-industria" role="tab" aria-controls="industria" aria-selected="false">Industria</a>
+</li>
+<li class="nav-item">
+<a class="nav-link " data-toggle="tab" href="#tarjeta-de-crédito-método-de-pago" role="tab" aria-controls="método-de-pago" aria-selected="false">Método de pago</a>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane fade active in" id="tarjeta-de-crédito-departamento">
+<div id="htmlwidget-7ab96d639247e6b5fbd6" style="width:100%;height:400px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7ab96d639247e6b5fbd6">{"x":{"visdat":{"339425bf310c":["function () ","plotlyVisDat"]},"cur_data":"339425bf310c","attrs":{"339425bf310c":{"labels":{},"values":{},"hole":0.5,"marker":{"colors":{}},"hovertemplate":{},"name":"","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"pie"}},"layout":{"margin":{"b":100,"l":20,"t":50,"r":0,"pad":0},"title":"TPV en 2019","font":{"family":"AmpleSoft"},"showlegend":true,"xaxis":{"showgrid":false,"automargin":false,"zeroline":false,"showticklabels":false},"yaxis":{"showgrid":false,"zeroline":false,"automargin":false,"showticklabels":false},"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false},"data":[{"labels":["Bogotá D.C.","Antioquia","Valle Del Cauca","Santander","Atlántico","Cundinamarca","Bolívar","Risaralda","Caldas","Norte De Santander","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros"],"values":[454296896477,237975400242,108731593448,65260108550,49319497541,47351114026,34149009471,30553728554,29166373754,27685646672,25509600823,23823240356,21100532691,18871035055,16178421693,15463091772,14857250000,12993185864,12688005683,11713857624,9638661908,6255287970,6003435354,5181877529,3910609583,3487229182,3391323101,1530060445,1131472818,401306820,107064568,67545324,38142509],"hole":0.5,"marker":{"color":"rgba(31,119,180,1)","colors":["#A6C307","#831F82","#46ACBC","#004852","#438F29","#48A5D9","#D7007F","#EF7D00","#FFDD00","#0956C6","#94969B","#E3E4E2","#00ADBA","#DFEF14","#555659","#951247","#470F51","#D63318","#A6C307","#831F82","#46ACBC","#004852","#438F29","#48A5D9","#D7007F","#EF7D00","#FFDD00","#0956C6","#94969B","#E3E4E2","#00ADBA","#DFEF14","#555659"],"line":{"color":"rgba(255,255,255,1)"}},"hovertemplate":["Bogotá D.C.","Antioquia","Valle Del Cauca","Santander","Atlántico","Cundinamarca","Bolívar","Risaralda","Caldas","Norte De Santander","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros"],"name":"","type":"pie","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="tab-pane fade" id="tarjeta-de-crédito-industria">
+<div id="htmlwidget-a3912831ffc504d88ae6" style="width:100%;height:400px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a3912831ffc504d88ae6">{"x":{"visdat":{"33946f4fff5":["function () ","plotlyVisDat"]},"cur_data":"33946f4fff5","attrs":{"33946f4fff5":{"labels":{},"values":{},"hole":0.5,"marker":{"colors":{}},"hovertemplate":{},"name":"","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"pie"}},"layout":{"margin":{"b":100,"l":20,"t":50,"r":0,"pad":0},"title":"TPV en 2019","font":{"family":"AmpleSoft"},"showlegend":true,"xaxis":{"showgrid":false,"automargin":false,"zeroline":false,"showticklabels":false},"yaxis":{"showgrid":false,"zeroline":false,"automargin":false,"showticklabels":false},"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false},"data":[{"labels":["Servicios de transporte","Ventas en general","Entretenimiento, turismo y ocio","Tecnología / telecomunicaciones","Educación y deportes","Moda y calzado","Servicios médicos y clínicos","Servicios financieros","Servicios especializados","Bienes del hogar","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros"],"values":[1724856679328,1101667973375,676049778107,455153439975,302249633560,230880297757,137710933947,114978562268,109191587064,85141168200,51775885074,47489261202,37364918063,31745762799,19866589403,15715274228,10383690607,3446406618,3097798690],"hole":0.5,"marker":{"color":"rgba(31,119,180,1)","colors":["#A6C307","#831F82","#46ACBC","#004852","#438F29","#48A5D9","#D7007F","#EF7D00","#FFDD00","#0956C6","#94969B","#E3E4E2","#00ADBA","#DFEF14","#555659","#951247","#470F51","#D63318","#A6C307"],"line":{"color":"rgba(255,255,255,1)"}},"hovertemplate":["Servicios de transporte","Ventas en general","Entretenimiento, turismo y ocio","Tecnología / telecomunicaciones","Educación y deportes","Moda y calzado","Servicios médicos y clínicos","Servicios financieros","Servicios especializados","Bienes del hogar","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros","Otros"],"name":"","type":"pie","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="tab-pane fade" id="tarjeta-de-crédito-método-de-pago">
+<div id="htmlwidget-d81fd02c6735d59e91ad" style="width:100%;height:400px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d81fd02c6735d59e91ad">{"x":{"visdat":{"339453be527b":["function () ","plotlyVisDat"]},"cur_data":"339453be527b","attrs":{"339453be527b":{"labels":{},"values":{},"hole":0.5,"marker":{"colors":{}},"hovertemplate":{},"name":"","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"pie"}},"layout":{"margin":{"b":100,"l":20,"t":50,"r":0,"pad":0},"title":"TPV en 2019","font":{"family":"AmpleSoft"},"showlegend":true,"xaxis":{"showgrid":false,"automargin":false,"zeroline":false,"showticklabels":false},"yaxis":{"showgrid":false,"zeroline":false,"automargin":false,"showticklabels":false},"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false},"data":[{"labels":["Visa","Mastercard","Amex","Diners","CMR","Codensa"],"values":[2849904542332,1887093886290,291158130591,85261857664,30654940138,14781635063],"hole":0.5,"marker":{"color":"rgba(31,119,180,1)","colors":["#A6C307","#831F82","#46ACBC","#004852","#438F29","#48A5D9"],"line":{"color":"rgba(255,255,255,1)"}},"hovertemplate":["Visa","Mastercard","Amex","Diners","CMR","Codensa"],"name":"","type":"pie","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="copyright"><p>Copyright &copy; 2020 PayU & Fidelio, todos los derechos reservados.</p></div>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
