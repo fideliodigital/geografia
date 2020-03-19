@@ -1,0 +1,1005 @@
+/*este css ajusta la vista del html producido por R markdown*/
+
+
+
+/*****************************************/
+/* FUENTES    */
+/*****************************************/
+
+@font-face {
+  font-family: "AmpleSoft Bold";
+  src: url("https://e-commerce.payulatam.com/hubfs/Storage/Font/AmpleSoft%20Bold.otf");
+}
+
+@font-face {
+  font-family: "AmpleSoft";
+  src: url("https://e-commerce.payulatam.com/hubfs/Storage/Font/AmpleSoft.otf");
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+/*****************************************/
+/* ESTILOS GENERALES    */
+/*****************************************/
+
+/**Configuraciones menú según resolución de pantalla*/
+@media (min-width: 1280px) and (max-width: 1919px)
+{
+  .navbar{ 
+    min-height: 100px;
+  }
+
+  .nav.nav-tabs
+  {
+    min-height: 70px;
+  }
+}
+
+@media (min-width: 1920px)
+{
+  .navbar{ 
+    min-height: 140px;
+  }
+
+  #header{
+    margin-top:-20px;
+  }
+
+  .nav.nav-tabs
+  {
+    margin-top: 15px;
+    min-height: 80px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px)
+{
+  .navbar{ 
+    height: 100px;
+  }
+
+  .nav.navbar-nav.navbar-right{
+    max-height: 50px;
+    overflow: auto;
+  }
+  .nav.navbar-nav.navbar-right>li{
+    white-space: nowrap;
+  }
+
+
+  #navbar{
+    padding-left: 200px;
+  }
+
+  .nav.nav-tabs
+  {
+    margin-top: -30px;
+  }
+
+  .nav.nav-tabs>li>a
+  {
+    margin-top: -10px;
+  }
+}
+
+@media (max-width: 768px)
+{
+  .navbar{ 
+    min-height: 55px;
+  }
+
+  .nav.nav-tabs
+  {
+    padding-top: 100px;
+    min-height: 35px;
+  }
+}
+
+body
+{
+font-family: "AmpleSoft" !important;
+background-color: #F8F7FC;
+}
+
+h1
+{
+  font-family: "AmpleSoft" !important;
+  color: black;
+  font-size: 50px;
+}
+h2
+{
+  font-size: 26px;
+  color: #333333;
+  font-family: "AmpleSoft";
+
+}
+h3,h4,h5,h6
+{
+
+text-align: center;
+font-family: "AmpleSoft";
+font-weight: bold;
+}
+
+/* AJusta el contenedor general para que no haya bordes ni espacios */
+.container-fluid.main-container {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: initial;
+}
+
+/* para cualquier etiqueta que necesita ajustarse */
+.centrar 
+{
+  text-align: center;
+}
+
+/* le da un borde gris a todas las graficas */
+svg.main-svg 
+{
+  box-shadow: 0 0 9px 1px #CECDD2;
+}
+
+
+
+/* el texto del copyrght al final de todas las páginas */
+.copyright
+{
+  margin-top: 25px;
+    font-size: 10px;
+    padding-left: 50px;
+    opacity: 0.4;
+}
+.ocultarEnDesktop
+  {
+    display:none !important;
+  }
+  .ocultarEnMovil
+{
+  display:block !important;
+}
+
+
+/* le da espacio a los lados a todos los contenidos del cuerp de la página
+no se le pone al body pq descuadra el header */
+/*.section
+{
+  padding: 0 50px;
+  color: #757575;
+}*/
+/* hace que las imagenes de 1 columna salgan a tamaño original y en movil salgan centradas */
+.col-md-1 img 
+{
+  width: auto;
+  padding-left: calc(50% - 60px);
+}
+@media (max-width: 768px)
+  {
+    .ocultarEnDesktop
+      {
+        display:block !important; 
+      }
+      .ocultarEnMovil
+      {
+        display:none !important;
+      }
+
+      h2
+      {
+        text-align: center;
+      }
+
+      #contenido ul
+      {
+        display: block;
+      }
+
+      #overview{
+        margin-top: -150px;
+      }
+
+      /* Hace que las imagenes de Colombia que van en dos columnas salgan dimensionadas correctamente */
+      .col-md-1.col-xs-3 
+      {
+        padding: 0;
+        padding-top: 30px;
+      }
+
+      .copyright
+    {
+      text-align: center;
+      padding: 0;
+    }
+    /* a las filas  con esta propiedad se les ajusta el borde para que abarque toda la pantalla */
+    .fondoGrisMovil
+    {
+      background-color: #F4F5F6;
+      margin: 0 -50px;
+      margin-bottom: 25px;
+      padding: 35px;
+    }
+
+  }
+/*****************************************/
+/* MENÚ    */
+/*****************************************/
+
+/*pone la barra de navegacion como transparente*/
+/*Le da un espacio arriba a la barra (diseño)*/
+#navbar.navbar-collapse 
+{
+    background: transparent;
+    padding-top: 45px;
+    padding-bottom: 25px;
+}
+
+/*pone la barra de navegacion como transparente*/
+/* agrega el fondo fijo a la barra */
+.navbar 
+{
+  background: url('img/Geografia-pagos-menu-internas.jpg');
+  position: fixed;
+  min-width: 100vw;
+  background-color: white;
+  background-size: cover;
+
+}
+
+/*subraya la seccion activa del doc en la barra de navegacion*/
+li.active 
+{
+  /* border-bottom: 1px solid black; */
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+
+/*Agrega el logo de payu blanco a la barra superrior*/
+a.navbar-brand:after 
+{
+  content: "";
+  color: transparent;
+  background-image: url(img/logoPayu.png);
+  background-blend-mode: luminosity;
+  background-repeat: no-repeat;
+  /* background-color: transparent; */
+  min-height: 85px;
+  min-width: 139px;
+  background-size: contain;
+  top: 28px;
+  left: 78px;
+  position: absolute;
+  z-index: 1000;
+}
+
+/*texto en blanco en el header*/
+.navbar-default .navbar-nav>li>a, 
+.navbar.navbar-default .navbar-nav>.active>a
+{
+color: white;
+font-size: 26px;
+}
+/*deja semitransparente el menu*/
+.navbar.navbar-default
+{
+  /* border-bottom: 1px solid white; */
+  border-bottom: none;
+  opacity: 0.9;
+}
+
+/*alinea el navbar a la derecha*/
+.navbar-default .container
+{
+margin-right: 25px;
+}
+
+/* ----------------------------------------------------------- */
+@media (max-width: 768px)
+{
+    /* fondo blanco solamente */
+    .navbar.navbar-default, #inicio .navbar.navbar-default 
+    {
+        background-image: none;
+        /* opacity: 1; */
+    }
+
+    /* quita el borde del desktop */
+    .navbar-default .container
+    {
+        margin-right: 10px;
+        
+    }
+    /* logo payu movíl */
+    a.navbar-brand:after 
+    {
+        content: "";
+        background-image: url('img/logoPayuVerde.png');
+        background-repeat: no-repeat;
+        width: 74px;
+        height: 37px;
+        top: 7px;
+        left: 18px;
+        background-size: cover;
+        min-width: 0;
+        min-height: 0;
+    }
+
+        /*color texto menu hamburguesa*/
+        .navbar-default .navbar-nav>li>a
+        {
+            color: #363636 ;
+        }
+
+         /*color texto activo menu hamburguesa*/
+         .navbar.navbar-default .navbar-nav>.active>a,
+         .navbar.navbar-default .navbar-nav>li>a:hover,
+         .navbar.navbar-default .navbar-nav>li>a:focus
+         {
+             color: #A6C307 ;
+             background-color: #a6c3071f;
+         }
+ 
+
+        /* quita el espacio de arriba del menú movil */
+        #navbar.navbar-collapse
+         {
+            padding-top: 0;
+        }
+        /* color de la hamburguesa */
+        .container-fluid .navbar-default .navbar-toggle .icon-bar 
+        {
+          background-color: black;
+          height: 3px;
+        }
+
+        /* color de la hamburguesa */
+        .container-fluid .navbar-default .navbar-toggle 
+        {
+          border: none;
+        }
+    
+}
+
+
+
+
+/*****************************************/
+/*  HEADER    */
+/*****************************************/
+
+
+/*le pone un fondo de imagen al header y le ajusta el tamaño*/
+#header 
+{
+  justify-content: center;
+  font-size: 55px;
+  left: 0;
+  margin-top: 0;
+  /* background-image: url(img/fondoHeader.png); */
+
+  min-width: 100vw;
+  min-height: 100vh;
+  background-size: cover;
+  display: flex;
+  /* position: absolute; */
+  background-repeat: no-repeat;
+  /* margin-top: -51px; */
+
+  margin-left: -70px;
+}
+
+/* formato del texto del header */
+#header h1
+{
+  color: black; 
+  font-size: 75px;
+  margin: auto;
+  text-align: center;
+}
+
+
+@media (min-width: 1260px)
+{
+  /* cuando la pantalla es demasiado grande
+   ajusta la imagen para que no se corra */
+  #header
+  {
+    background-position: center;
+    background-size: cover;
+    min-height: 130vh;
+  }
+}
+
+@media (max-width: 768px)
+{
+    /* hace que la imagen se acomode a la pantalla  */
+ #header
+    {
+      background-size: contain;
+      /* min-height: auto; */
+    }
+
+    #header h1
+    {
+      font-size: 50px;
+      font-weight: bold;
+
+    }
+
+  
+    
+
+}
+
+/*****************************************/
+/*  SUBHEADER CONTENIDO    */
+/*****************************************/
+
+/* Le da el color y la negrilla al título de contenido*/
+#contenido h1{
+  font-weight: bolder;
+  color: #757575;
+  text-align: center;
+}
+
+
+/*Cada uno de los titulos de contenido en el flexbox*/
+#contenido > ul.nav-tabs li{
+  margin: 7px auto;
+  font-size: 20px;
+}
+
+
+
+/*el subheader de contenido*/
+#contenido > .nav-tabs
+{
+ display: flex;
+ justify-content: space-between;
+ list-style: none;
+ position: fixed;
+ top: 121px;
+ background-color: white;
+ width: 100%;
+ margin-left: -50px;
+ padding: 0 5%;
+ box-shadow: 0px 4px 4px 0px #CECDD2;
+ padding-top: 10px;
+ padding-bottom: 15px;
+ z-index: 100;
+}
+
+/*Cada uno de los titulos de contenido (nav) en el contenedor*/
+#contenido > .nav-tabs li a 
+{
+  color: #363636;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+/* Da el color y el grosor del título "Contenido", que para que el nav funcione viene como h1*/
+/* esconde el titulo de contenido ya que queda en los tabs */
+#contenido> h1, #contenido> h2
+{
+  color:transparent;
+ font-size: 3px;
+ /* font-size: 35px; */
+ /* color: #757575; */
+ /* text-align: center; */
+}
+/* da formato al link áctivo */
+#contenido > .nav-tabs li.active a,
+#contenido > .nav-tabs li a:hover
+ {
+  color: #C4D520;
+  border: none;
+  background: none;
+}
+@media (max-width: 768px)
+{
+
+  #contenido > .nav-tabs.nav
+  {
+    top: 52px;
+    width: 100%;
+    margin: 0 -50px;
+    border-top: 1px solid #CECDD2;
+    overflow-x: scroll;
+    display: block;
+    white-space: nowrap;
+    padding: 2px 0;
+}
+ 
+  #contenido > .nav-tabs.nav li
+  {
+    margin: 0px;
+    color: #C4D520;
+    text-decoration: none;
+    padding: 0;
+    display: inline-block;
+    float: none;
+  }
+
+  #contenido > .nav-tabs.nav li a 
+  {
+    
+    font-size: 11px;
+    text-overflow: ellipsis;
+    /* overflow: visible; */
+    flex-flow: nowrap;
+    word-break: break-all;
+    width: max-content;
+}
+}
+
+/*****************************************/
+/* TABS INTERNAS (i.e Por industria, por ciudad)    */
+/*****************************************/
+
+
+/* color del titulo */
+.nav-pills a.nav-link 
+{
+  color: #1D1D1F;
+}
+
+/* color de la pestaña activa */
+.nav-pills>li.active>a, 
+.nav-pills>li.active>a:hover, 
+.nav-pills>li.active>a:focus 
+{
+  color: #ffffff;
+  background-color: #9E9E9E;
+}
+
+/* quitar el subrayado */
+nav-pills>li.active
+{
+  text-decoration: none;
+}
+@media (max-width: 768px)
+{
+}
+
+/*****************************************/
+/* Inicio    */
+/*****************************************/
+
+
+#inicio #header
+{
+  background-image: url('img/Geografia-pagos-header.jpg');
+  color: white;
+  margin-top: -100px;
+  /* min-height: 130hv ; */
+  
+}
+
+/*formatea el texto del header dentro de la imagen*/
+#inicio #header h1 
+{
+ color: white; 
+ margin-top: 200px;
+}
+
+#inicio h1
+{
+  text-align: center;
+  font-size: 45px;
+}
+
+
+
+/* agrega el fondo fijo a la barra */
+#inicio .navbar 
+{
+  background-image: url('img/fondoHeader.png');
+  background-size: cover;
+}
+
+
+/*linea blancla debajo del navbar. Va casi de lado a lado de la pantalla
+quita la transparencia del menu*/
+#inicio .navbar.navbar-default
+{
+    /* border-bottom: 1px solid white; */
+    border-bottom: none;
+    box-shadow: 0px 40px 0px -39px white;
+    opacity: 1;
+}
+
+#inicio div#por-qué-importan-las-transacciones 
+    {
+      margin-top: -150px;
+      padding: 0 170px;
+   }
+   
+#inicio p
+{
+  font-size: 16px;
+}
+@media (max-width: 768px)
+{
+    /*formatea el texto del header dentro de la imagen*/
+    #inicio #header h1 
+    {
+      margin-top: 24px;
+      font-size: 27px;
+      height: 250px;
+    }
+
+    #inicio h1
+    {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    #inicio #header
+    {
+      background-size: 100%;
+    min-height: auto;
+    margin: 0
+    }
+
+    #inicio div#por-qué-importan-las-transacciones 
+    {
+      margin-top: 20px;
+      padding: 0 30px;
+   }
+
+   #inicio p{
+     margin-top: -10px;
+   }
+   
+
+}
+
+/*****************************************/
+/* COLOMBIA    */
+/*****************************************/
+#colombia {
+  padding: 0 50px;
+}
+
+#colombia #header
+{
+  background-image: url('img/fondoColombia.jpg');
+  background-size: auto;
+  margin-left: 0;
+  position: absolute;
+}
+
+/*deja semitransparente el menu*/
+#colombia .navbar.navbar-default
+{
+  box-shadow: 0px 4px 4px 0px #CECDD2;
+}
+
+#colombia #header h1
+{
+  display: none;
+}
+
+#colombia h2
+{
+  text-align: left;
+}
+
+#colombia #titulo
+{
+  margin-bottom: 10%;
+}
+
+#colombia p
+{
+  font-size: 16px;
+  margin-top: -10px
+}
+
+#colombia #cuántas-personas-viven-en-el-país, #qué-tan-grande-es-el-territorio
+{
+  text-align: left;
+}
+
+#colombia p+img{
+  height: 100px;
+}
+
+#colombia #un-mercado-en-progreso{
+  margin-top: -20px;
+}
+
+#colombia .row .col-md-4 p img{
+  margin-top: 200px;
+}
+
+@media (max-width: 768px)
+{
+  #colombia .row .col-md-4 p img{
+    margin: 10px;
+  } 
+
+  #colombia .ocultarEnDesktop h1{
+    font-weight: bold;
+  }
+
+  #colombia .tituloMovil
+  {
+    position: relative;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  #colombia #header{
+    background-size: contain;
+    margin-left: 0;
+  }
+
+  #colombia #contexto-de-país{
+    margin-top: -38px;
+  }
+
+  #colombia p{
+    margin-top: -15px;
+  }
+
+  #colombia 
+  {
+    padding: 0 30px;
+  }
+}
+
+
+/*****************************************/
+/* METODOS PAGO    */
+/*****************************************/
+
+/*******HEADER¨***********/
+
+/*le pone un fondo de imagen al header en metodos de pago y le ajusta el tamaño*/
+#metodosPago #header
+{
+  color: white;
+  background-image: url('img/Geografia-pagos-bg3.jpg');
+  min-height: 20vh;
+  /* compensa que los tabs de contenido estan encima */
+  margin-top: 100px;
+}
+
+/*centra el texto del header dentro de la imagen*/
+
+#metodosPago #header h1 
+{
+  margin-top: 200px;
+}
+
+#metodosPago
+{
+  padding: 0 50px;
+}
+
+/*Acomoda el texto que sea parrafo de manera justificada y centrada respecto a la página*/
+#metodosPago p
+{
+  color: #757575;
+  text-align: justify;
+}
+
+/*Crea el display para hacer los recuadros de información en métodos de pago*/
+#metodosPago p+p+ul , #industrias p+p+ul, #departamentos p+p+ul
+{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+/*Cada uno de los recuadros de información de métodos de pago*/
+#metodosPago p+p+ul li, #industrias p+p+ul li, #departamentos p+p+ul li
+{
+  width: 30%;  
+  min-height: 250px;  
+  background-color: #FFFFFF;
+  box-shadow: 0 0 9px 1px #CECDD2;
+  border-radius: 20px;
+  margin: 8px;
+  padding: 20px
+}
+
+/*Adaptación a móvil*/
+@media (max-width: 768px)
+{
+  #metodosPago p+p+ul, #industrias p+p+ul, #departamentos p+p+ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    flex-direction: column;
+    padding-inline-start: 0%;
+  }
+  #metodosPago p+p+ul li, #industrias p+p+ul li, #departamentos p+p+ul li {
+    width: auto;
+    height: auto;  
+    background-color: #FFFFFF;
+    border: 1px solid #ecebef;
+    border-radius: 20px;
+    margin: 8px;
+  }
+
+  #metodosPago br{
+    display: none;
+  }
+
+  #metodosPago #header h1
+  {
+    margin-top: 0;
+  }
+}
+
+
+/* Borde gráficas cuando haya columnas*/
+#metodosPago .columna{
+  border: 5px solid #D4D4D6;
+  border-radius: 20px;
+}
+
+
+@media (max-width: 768px)
+  {
+    #metodosPago p+p+ul
+    {
+      display: block;
+      padding: 0;
+    }
+
+    #metodosPago p+p+ul li 
+    {
+      width: auto;
+    }
+
+    #metodosPago p
+    {
+      padding: 0;
+    }
+
+ 
+    /* corrige el padding del header para que no se mueva a la derecha*/
+    #metodosPago #header
+    {
+      margin-left: -50px;
+
+    }
+
+  }
+/**************************************/
+/*departamentos*/
+/***************************************/
+
+#departamentos{
+  padding: 0 50px;
+}
+
+#departamentos #header
+{
+  color: white;
+  background-image: url('img/Geografia-pagos-bg2.jpg');
+  background-size: 100%;
+  min-height: 30vh;
+  margin-top: 160px;
+  margin-left: -50px;
+}
+
+#departamentos #resumen{
+  padding: 0 50px;
+  color: #757575;
+}
+
+
+@media (max-width: 768px)
+{
+  /* corrige el padding del header para que no se mueva a la derecha*/
+  #departamentos #header
+  {
+    margin-left: -50px;
+    background-size: 100%;
+    margin-top: 0;
+  }
+}
+/**************************************/
+/*Industrias*/
+/***************************************/
+
+#industrias{  
+  padding: 0 50px;
+}
+
+#industrias #header{
+  color: white;
+  background-image: url('img/Geografia-pagos-bg3.jpg');
+  min-height: 30vh;
+  margin-top: 200px;
+}
+
+#industrias p
+{
+  color: #757575;
+  text-align: justify;
+}
+
+
+#industrias #hallazgos-clave ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+@media (max-width: 768px)
+{
+
+  #industrias #hallazgos-clave ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  #industrias #hallazgos-clave ul li{
+    width: auto;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+   /* corrige el padding del header para que no se mueva a la derecha*/
+   #industrias #header
+   {
+     margin-left: -50px;
+     margin-top: 0;
+
+   }
+}
+
+#industrias #hallazgos-clave ul li { 
+  height: 180px;  
+  background-color: #FFFFFF;
+  border: 1px solid #ecebef;
+  border-radius: 10px;
+  margin: 8px;
+  padding: 20px;
+}
+
+/**********************************/
+/*GUIA*/
+/**********************************/
+
+#guia{
+  padding: 0 50px;
+}
+
+
+#guia #header
+{
+  color: white;
+  background-image: url('img/Geografia-pagos-bg3.jpg');
+  min-height: 50vh;
+  margin-top: 70px;
+}
+
+/*deja semitransparente el menu*/
+#guia .navbar.navbar-default
+{
+  box-shadow: 0px 4px 4px 0px #CECDD2;
+}
+
+@media (max-width: 768px)
+{
+/* corrige el padding del header para que no se mueva a la derecha*/
+  #guia #header
+  {
+    margin-left: -50px;
+    margin-top: 0;
+
+  }
+}
