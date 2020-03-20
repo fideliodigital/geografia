@@ -22,6 +22,18 @@
 /* ESTILOS GENERALES    */
 /*****************************************/
 
+.leaflet-bottom, .leaflet-top{
+  z-index: 10;
+}
+
+.leaflet{
+  box-shadow: 0px 0px 10px 0px;
+}
+
+body{
+  font-size: 16px;
+}
+
 /**Configuraciones menú según resolución de pantalla*/
 @media (min-width: 1280px) and (max-width: 1919px)
 {
@@ -585,6 +597,13 @@ nav-pills>li.active
  margin-top: 200px;
 }
 
+
+#inicio p:first-of-type{
+  padding: 0px 170px;
+  text-align: center;
+  font-size: 20px;
+}
+
 #inicio h1
 {
   text-align: center;
@@ -613,7 +632,7 @@ quita la transparencia del menu*/
 
 #inicio div#por-qué-importan-las-transacciones 
     {
-      margin-top: -150px;
+      margin-top: -110px;
       padding: 0 170px;
    }
    
@@ -789,15 +808,14 @@ quita la transparencia del menu*/
 }
 
 /*Crea el display para hacer los recuadros de información en métodos de pago*/
-#metodosPago p+p+ul , #industrias p+p+ul, #departamentos p+p+ul
-{
+#metodosPago p+p+ul , #industrias p+p+ul, #departamentos div+ul:first-of-type{
   display: flex;
   justify-content: space-between;
   list-style: none;
 }
 
 /*Cada uno de los recuadros de información de métodos de pago*/
-#metodosPago p+p+ul li, #industrias p+p+ul li, #departamentos p+p+ul li
+#metodosPago p+p+ul li, #industrias p+p+ul li, #departamentos div+ul:first-of-type li
 {
   width: 30%;  
   min-height: 250px;  
