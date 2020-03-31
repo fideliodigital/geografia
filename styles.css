@@ -587,6 +587,7 @@ nav-pills>li.active
   color: white;
   margin-top: -100px;
   /* min-height: 130hv ; */
+  background-position: center 20%;
   
 }
 
@@ -597,20 +598,70 @@ nav-pills>li.active
  margin-top: 200px;
 }
 
-
-#inicio p:first-of-type{
-  padding: 0px 170px;
+/*Arregla el slogan*/
+#inicio div + p{
+  color: white;
+  padding: 0px 350px 0 280px;
   text-align: center;
-  font-size: 20px;
+  font-size: 15px;
+  position: absolute;
+  top: 220px;
 }
 
+@media (min-width: 1260px)
+{
+  #inicio #header{
+    background-position: center 30%;
+  }
+}
+
+@media (max-width: 1260px )
+{
+  #inicio div + p{
+    padding: 0px 350px 0 250px;
+    position: absolute;
+    top: 210px;
+  }
+}
+
+@media (max-width: 1100px )
+{
+  #inicio div + p{
+    padding: 0px 300px 0 230px;
+  }
+
+  #inicio #header{
+    background-position: center 10%;
+  }
+}
+
+@media (max-width: 1000px )
+{
+  #inicio div + p{
+    padding: 0px 260px 0 180px;
+  }
+
+  #inicio #header{
+    background-position: center -20%;
+  }
+}
+
+@media (max-width: 920px )
+{
+  #inicio div + p{
+    padding: 0px 260px 0 180px;
+  }
+
+  #inicio #header{
+    background-position: center 90px;
+  }
+}
+  
 #inicio h1
 {
   text-align: center;
   font-size: 45px;
 }
-
-
 
 /* agrega el fondo fijo a la barra */
 #inicio .navbar 
@@ -632,7 +683,7 @@ quita la transparencia del menu*/
 
 #inicio div#por-qué-importan-las-transacciones 
     {
-      margin-top: -110px;
+      margin-top: -80px;
       padding: 0 170px;
    }
    
