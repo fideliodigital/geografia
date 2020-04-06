@@ -88,7 +88,7 @@ function situarInicio()
 	{
 		var slogan = document.getElementById("slogan");
 		var cuadro = document.getElementById("cuadroIndicadores");
-		var topCuadro = 10 + slogan.offsetHeight + slogan.offsetTop + parseInt(window.getComputedStyle(slogan).getPropertyValue("margin-top"));
+		var topCuadro = 15 + slogan.offsetHeight + slogan.offsetTop + parseInt(window.getComputedStyle(slogan).getPropertyValue("margin-top"));
 		cuadro.style.top= topCuadro + "px";
 		var titulo = document.getElementsByClassName("inicio");
 		titulo[0].style.top = (cuadro.offsetTop + cuadro.offsetHeight)+"px";

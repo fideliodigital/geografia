@@ -613,7 +613,7 @@ nav-pills>li.active
 #inicio div + p{
   color: white;
   text-align: center;
-  font-size: 15px;
+  font-size: 20px;
   position:absolute;
   top: 220px;
   width: 60%;
@@ -627,6 +627,23 @@ nav-pills>li.active
     width: 70%;
     left: 15%;
     margin-top: 0;
+    font-size: 16px;
+  }
+}
+
+@media(min-width: 1300px)
+{
+  #inicio div + p {
+    width: 50%;
+    left: 25%;
+  }
+}
+
+@media(min-width: 1800px)
+{
+  #inicio div + p {
+    width: 40%;
+    left: 30%;
   }
 }
 
