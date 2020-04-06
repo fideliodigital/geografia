@@ -583,11 +583,23 @@ nav-pills>li.active
 
 #inicio #header
 {
-  background-image: url('img/Geografia-pagos-header.jpg');
+  background-image: url('img/Fondo-geografia.png');
   color: white;
   margin-top: -100px;
-  /* min-height: 130hv ; */
-  
+  min-height: auto;
+  height: 500px;
+}
+
+#inicio #cuadroIndicadores{
+  position: absolute;
+  width: 60%;
+  left: 20%;
+  top: 1500px;
+}
+
+#inicio .inicio{
+  position: absolute;
+  top: 1500px;
 }
 
 /*formatea el texto del header dentro de la imagen*/
@@ -603,147 +615,18 @@ nav-pills>li.active
   text-align: center;
   font-size: 15px;
   position:absolute;
+  top: 220px;
+  width: 60%;
+  left: 20%;
+
 }
 
-@media (min-width: 1920px)
-{
-  #inicio{
-    width: 1920px;
-  }
-}
-
-@media (min-width: 1800px)
-{
-
+@media (max-width: 768px){
   #inicio div + p{
-    top: 220px;
-    width: 100%;
-    padding: 0px 28% 0px 22%;
-  }
-
-  #inicio #header{
-    background-position: center -350px;
-  }
-}
-
-@media (max-width: 1800px)
-{
-
-  #inicio div + p{
-    top: 220px;
-    width: 100%;
-    padding: 0px 28% 0px 22%;
-  }
-  #inicio #header{
-    background-position: center -350px;
-  }
-}
-
-@media (max-width: 1500px)
-{
-
-  #inicio div + p{
-    top: 220px;
-    padding: 0px 25% 0px 20%;
-  }
-
-}
-
-@media (max-width: 1400px)
-{
-
-  #inicio div + p{
-    top: 220px;
-    padding: 0px 25% 0px 20%;
-  }
-
-  #inicio #header{
-    background-position: center -70px;
-  }
-}
-
-@media (max-width: 1260px )
-{
-  #inicio div + p{
-    padding: 0px 350px 0 250px;
-    top: 210px;
-  }
-
-  #inicio #header{
-    background-position: center -40px;
-  }
-}
-
-@media (max-width: 1100px )
-{
-  #inicio div + p{
-    padding: 0px 300px 0 230px;
-  }
-
-  #inicio #header{
-    background-position: center -15px;
-  }
-}
-
-@media (max-width: 1000px )
-{
-  #inicio div + p{
-    padding: 0px 260px 0 180px;
-  }
-
-  #inicio #header{
-    background-position: center 20px;
-  }
-}
-
-@media (max-width: 920px )
-{
-  #inicio div + p{
-    padding: 0px 260px 0 180px;
-  }
-
-  #inicio #header{
-    background-position: center 80px;
-  }
-}
-
-@media(max-width: 768px)
-{
-  #inicio div + p{
-    padding: 0px 50px;
-    position: absolute;
-    top: 120px
-  }
-
-  #inicio #header{
-    background-position: center -100px;
-  }
-}
- 
-@media(max-width: 700px)
-{
-  #inicio div + p{
-    padding: 0px 50px;
-    position: absolute;
-    top: 120px
-  }
-
-  #inicio #header{
-    background-position: center -60px;
-  }
-}
-
- 
-@media(max-width: 580px)
-{
-  #inicio div + p{
-    padding: 0px 50px;
-    position: absolute;
-    top: 120px
-  }
-
-  #inicio #header{
-    background-position: center -20px;
+    top: 120px;
+    width: 70%;
+    left: 15%;
+    margin-top: 0;
   }
 }
 
