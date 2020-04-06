@@ -682,7 +682,7 @@ quita la transparencia del menu*/
 
     #inicio #header
     {
-      background-size: 100%;
+      background-size: 100% 80%;
     min-height: auto;
     margin: 0
     }

@@ -88,18 +88,12 @@ function situarInicio()
 	{
 		var slogan = document.getElementById("slogan");
 		var cuadro = document.getElementById("cuadroIndicadores");
-		var topCuadro = slogan.offsetHeight + slogan.offsetTop + parseInt(window.getComputedStyle(slogan).getPropertyValue("margin-top"));
-		console.log(topCuadro);
+		var topCuadro = 10 + slogan.offsetHeight + slogan.offsetTop + parseInt(window.getComputedStyle(slogan).getPropertyValue("margin-top"));
 		cuadro.style.top= topCuadro + "px";
 		var titulo = document.getElementsByClassName("inicio");
-		console.log(titulo);
 		titulo[0].style.top = (cuadro.offsetTop + cuadro.offsetHeight)+"px";
-		console.log("hizo la funcion");
 		var fondo = document.getElementById("header");
 		fondo.style.height= (cuadro.offsetTop + 2*Math.ceil(cuadro.offsetHeight/3)) + "px";
-		console.log("Top ")
-		console.log("Alto dondo" + (cuadro.offsetTop + Math.ceil(cuadro.offsetHeight/2)) )
-
 	}
 }
 
