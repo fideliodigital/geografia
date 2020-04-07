@@ -60,7 +60,7 @@ function anadirOnClickAGraficas()
     }                                                                           
 }
 
-window.onload=  anadirOnClickAGraficas;
+/*window.onload=  anadirOnClickAGraficas;*/
 // anadirOnClickAGraficas();
 
 // Las gráficas que estan visibles se actualizan, las que no se ven
@@ -100,8 +100,8 @@ function situarInicio()
 	}
 }
 
-window.onresize = situarInicio;
-window.onload = situarInicio;
+/*window.onresize = situarInicio;
+/*window.onload = situarInicio;
 
 
 /* Esta función elimina los legends de las gráficas cuando se encuentra en versión móvil*/
@@ -130,6 +130,12 @@ function eliminarLegends()
 	}
 }
 
+function funcionesAlInicio(){
+	anadirOnClickAGraficas();
+	situarInicio();
+	eliminarLegends();
+}
 
-window.onresize = eliminarLegends;
-window.onload = eliminarLegends;
+
+window.onresize = funcionesAlInicio;
+window.onload = funcionesAlInicio;
