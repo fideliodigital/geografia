@@ -81,11 +81,14 @@ function actualizarTodasLasGraficasVisibles()
 
 }
 
+
+/*Esta función acomoda la página principal para que la imagen y el contenido se situen de acuerdo a la posición del slogan*/
 function situarInicio()
 {
 	var inicio = document.getElementById("inicio");
 	if(inicio != null)
 	{
+		console.log("entro a situar")
 		var slogan = document.getElementById("slogan");
 		var cuadro = document.getElementById("cuadroIndicadores");
 		var topCuadro = 15 + slogan.offsetHeight + slogan.offsetTop + parseInt(window.getComputedStyle(slogan).getPropertyValue("margin-top"));
@@ -99,3 +102,34 @@ function situarInicio()
 
 window.onresize = situarInicio;
 window.onload = situarInicio;
+
+
+/* Esta función elimina los legends de las gráficas cuando se encuentra en versión móvil*/
+
+function eliminarLegends()
+{
+	if(screen.width < 768)
+	{
+		console.log("entro a aca")
+		var update = {'showlegend':false}
+		var graficas = document.querySelectorAll(".js-plotly-plot");
+		for (var i = 0; i < graficas.length; i++) 
+		{
+			Plotly.relayout(graficas[i] , update);
+		}
+	}
+	else
+	{
+		console.log("entro a aca")
+		var update = {'showlegend':true}
+		var graficas = document.querySelectorAll(".js-plotly-plot");
+		for (var i = 0; i < graficas.length; i++) 
+		{
+			Plotly.relayout(graficas[i] , update);
+		}
+	}
+}
+
+
+window.onresize = eliminarLegends;
+window.onload = eliminarLegends;

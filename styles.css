@@ -209,7 +209,7 @@ no se le pone al body pq descuadra el header */
       }
 
       #overview{
-        margin-top: -150px;
+        margin-top: 0px;
       }
 
       /* Hace que las imagenes de Colombia que van en dos columnas salgan dimensionadas correctamente */
@@ -429,7 +429,7 @@ margin-right: 25px;
     /* hace que la imagen se acomode a la pantalla  */
  #header
     {
-      background-size: contain;
+      background-size: cover;
       /* min-height: auto; */
     }
 
@@ -1027,6 +1027,10 @@ quita la transparencia del menu*/
   border-radius: 10px;
   margin: 8px;
   padding: 20px;
+}
+
+.contenido{
+  margin-top: ;
 }
 
 /**********************************/
